@@ -3,7 +3,11 @@ body {
 	margin: 0;
 
 }
-
+body {
+	background-color: #fff;
+    height: 100vh;
+    width: 100vw;
+}
 @font-face {
   font-family: HelveticaNeueLTPro;
   src: url(../Fonts/HelveticaNeueLTPro-HvCn.otf) format("opentype");
@@ -13,6 +17,27 @@ body {
   src: url(../Fonts/HelveticaNeueLTPro-HvCnO.otf) format("opentype");
   font-style: italic;
 }
+.banner:-webkit-full-screen,
+body:-webkit-full-screen {
+  background-color: #fff;
+}
+.banner:-moz-full-screen,
+body:-moz-full-screen {
+  background-color: #fff;
+}
+.banner:-ms-fullscreen,
+body:-ms-fullscreen {
+  background-color: #fff;
+}
+.banner:fullscreen,
+body:fullscreen {
+  background-color: #fff;
+}
+
+
+
+
+
 .banner {
 	/*width: 1200px;*/
 	/*height: 800px;*/
@@ -23,8 +48,13 @@ body {
 	height: 1160px;*/
 	margin: 50px auto 0;
 	border: 1px solid black;
-	position: relative;
-	font-family: "Roboto";
+    position: fixed;
+    font-family: "Roboto";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .banner .cont_start {
@@ -38,7 +68,13 @@ body {
 	display: table;
 
 	opacity: 1;
-	transition: opacity 0.3s;
+
+	transition:  opacity 0.3s;
+	-webkit-transition: opacity 0.3s;
+	-moz-transition:  opacity 0.3s;
+    -ms-transition:  opacity 0.3s;
+    -o-transition:  opacity 0.3s;
+    
 	z-index: 999;
 	background-color: #fff;
 }
@@ -64,13 +100,13 @@ body {
 	box-shadow: 0 0 12px #505050;
 }
 
-.banner.show .cont_start{
+.banner.play .cont_start{
 	opacity: 0;
 	pointer-events: none;
 }
 
 .banner .view {
-	opacity: 0;
+	/*opacity: 0;*/
 	pointer-events: none;
 	position: absolute;
 	top: 0;
@@ -101,8 +137,6 @@ body {
 	overflow: hidden;
 }
 
-
-
 .banner .view  .desc{
 	position: absolute;
 	top: 235px;
@@ -113,13 +147,24 @@ body {
 	line-height: 83px;
 	margin-left: 150px;
 	opacity: 0;
-	transition: 0.5s ease 1s;
+	transition: all 0.5s ease 0s;
+	-webkit-transition:all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    
+
 }
 .banner.show .view  .desc {
 	margin-left: 0px;
 	opacity: 1;
+	transition: all 0.5s ease 1s;
+	-webkit-transition: all 0.5s ease 1s;
+	-moz-transition: all 0.5s ease 1s;
+    -ms-transition: all 0.5s ease 1s;
+    -o-transition: all 0.5s ease 1s;
 }
-.banner.show .view .circle{
+.banner .view .circle{
 	position: absolute;
     left: 700px;
     top: 532px;
@@ -130,36 +175,56 @@ body {
     background: url(../image/Circle.png) no-repeat;
 
 	animation-duration: 1s;
-	animation-name: circle;
+	animation-name: none;
 	animation-iteration-count: 1;
 	animation-timing-function: ease;/*easeInOutCubic;*/
 	
 	background-size: contain;
-	transform: rotate(17deg);
-
 	color: #fff;
 	font-style: italic;
 	text-align: center;
 	text-transform: uppercase;
 	text-shadow: 4px 4px 2px rgba(109, 115, 132, 0.7);
+
+	
+	-moz-transform: scale(0) rotate(0deg);
+    -ms-transform: scale(0) rotate(0deg);
+    -webkit-transform: scale(0) rotate(0deg);
+    -o-transform: scale(0) rotate(0deg);
+    transform: scale(0) rotate(0deg);
+
+	transition: transform 0.5s;
+	-moz-transition: transform 0.5s;
+    -ms-transition: transform 0.5s;
+    -webkit-transition:transform 0.5s;
+    -o-transition: transform 0.5s;
+}
+.banner.show .view .circle {
+	transform: scale(1) rotate(17deg);
+
+	-webkit-transform: scale(1) rotate(17deg);
+	-moz-transform: scale(1) rotate(17deg);
+    -ms-transform: scale(1) rotate(17deg);
+    -o-transform: scale(1) rotate(17deg);
+	animation-name: circle;
 }
 
-.banner.show .view .circle .text1 {
-    font-size: 85px;
-    padding-top: 77px;
-    line-height: 57px;
+.banner .view .circle .text1 {
+	font-size: 78px;
+	padding-top: 64px;
+	line-height: 65px;
     /*text-indent: 45px;*/
 }
-.banner.show .view .circle .price {
-    font-size: 127px;
-    line-height: 130px;
+.banner .view .circle .price {
+    font-size: 110px;
+    line-height: 110px;
     /*text-indent: 30px;*/
 
 }
-.banner.show .view .circle > div{
+.banner .view .circle > div{
 	/*text-indent: 20px;*/
 }
-.banner.show .view .btn_switch{
+.banner .view .btn_switch{
 	bottom: 8px;
     position: absolute;
     color: White;
@@ -168,7 +233,7 @@ body {
     width: 80px;
     text-align: center;
     height: 30px;
-    line-height: 37px;
+    line-height: 33px;
     background: #025F02;
     border-radius: 5px;
     cursor: pointer;
@@ -189,6 +254,10 @@ body {
 	right: 0;
 	padding: 15px 0 15px 30px;
 	transition: bottom 0.8s;
+	-webkit-transition:bottom 0.8s;
+	-moz-transition: bottom 0.8s;
+    -ms-transition: bottom 0.8s;
+    -o-transition: bottom 0.8s;
 }
 .banner.show .view .blue_line {
 	bottom: 0;
@@ -210,6 +279,10 @@ body {
 	margin-left: -50px;
 	opacity: 0;
 	transition: all 0.5s ease 1s;
+	-webkit-transition:all 0.5s ease 1s;
+	-moz-transition: all 0.5s ease 1s;
+	-ms-transition: all 0.5s ease 1s;
+	-o-transition:all 0.5s ease 1s;
 }
 .banner.show .view .blue_line .was {
 	margin-left: 0px;
@@ -245,6 +318,10 @@ body {
 	padding-top: 13px;
 	margin-left: -50%;
 	transition: margin 0.5s ease 1s;
+	-webkit-transition:margin 0.5s ease 1s;
+	-moz-transition: margin 0.5s ease 1s;
+	-ms-transition: margin 0.5s ease 1s;
+	-o-transition:margin 0.5s ease 1s;
 }
 .banner.show .view .blue_line .text_now  {
 	margin-left: 0;
@@ -252,12 +329,18 @@ body {
 }
 .banner .view .blue_line .text_price {
 	color: #ff0;
-	font-size: 162px;
+	font-size: 140px;
 	font-family:'Times New Roman';
 	/*text-indent: 7px;*/
 	line-height: 110px;
 	margin-left: -50%;
 	transition: margin 0.5s ease 1.2s;
+	-webkit-transition:margin 0.5s ease 1.2s;
+	-moz-transition: margin 0.5s ease 1.2s;
+	-ms-transition: margin 0.5s ease 1.2s;
+	-o-transition:margin 0.5s ease 1.2s;
+
+	padding-top: 10px;
 } 
 
 .banner.show .view .blue_line .text_price{
@@ -274,6 +357,10 @@ body {
 	letter-spacing: 0.5px;
 	opacity: 0;
 	transition: opacity 0.5s ease 1.5s;
+	-webkit-transition:opacity 0.5s ease 1.5s;
+	-moz-transition: opacity 0.5s ease 1.5s;
+	-ms-transition: opacity 0.5s ease 1.5s;
+	-o-transition:opacity 0.5s ease 1.5s;
 }
 .banner.show .view .blue_line .info_brand{
 	opacity: 1;
@@ -284,37 +371,58 @@ body {
 	/*background-color: #d70000;*/
 	position: absolute;
 	top: 73px;
-	width: 50%;
-	height: 115px;
-	line-height: 130px;
+	width: 50%;	
+	height: 109px;
+	/*line-height: 130px;*/
 	/*text-indent: 52px;*/
 	text-align: center;
 	font-size: 68px;
 	text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 	
 }
 .banner .view .line_top .text_top{
 	position: absolute;
 	top: 0;
-	left: 30px;
+	left: 0px;
 	opacity: 0;
 	width: 90%;
-	transition: opacity 1s ease 0.8s,left 1s ease 0.8s;
-}
+	transition: opacity 1s ease 0s, left 1s ease 0s;
 
+	-webkit-transition:opacity 1s ease 0s, left 1s ease 0s;
+	-moz-transition: opacity 1s ease 0s, left 1s ease 0s;
+	-ms-transition: opacity 1s ease 0s, left 1s ease 0s;
+	-o-transition:opacity 1s ease 0s, left 1s ease 0s;
+	/*height: 65px;*/
+    bottom: 0;
+    margin: auto;
+    padding-top: 10px;
+}
+.banner.show .view .line_top .text_top {
+	transition: opacity 1s ease 0.8s;
+-webkit-transition: opacity 1s ease 0.8s;
+	-moz-transition:  opacity 1s ease 0.8s;
+	-ms-transition:  opacity 1s ease 0.8s;
+	-o-transition: opacity 1s ease 0.8s;
+}
 .banner .view .line_top .bg_top {
 	width: 100%;
 	height: 100%;
 	background: url(../image/RedLineTop.png) no-repeat;
-	background-size: cover;
-	background-position-x: right;
-	background-position-y: center;
-	background-size: auto 100%;
+	/*background-size: cover;*/
+	background-size: contain;
+
+/*	background-position-x: right;
+	background-position-y: center;*/
+	/*background-size: auto 100%;*/
 	position: absolute;
 	top: 0;
 	left: -100%;
 	transition: left 0.7s ease 0.3s;
+	-webkit-transition: left 0.7s ease 0.3s;
+	-moz-transition:  left 0.7s ease 0.3s;
+	-ms-transition:  left 0.7s ease 0.3s;
+	-o-transition: left 0.7s ease 0.3s;
 }
 .banner.show .view .line_top .bg_top,
 .banner.show .view .line_top .text_top {
@@ -324,7 +432,7 @@ body {
 .banner.show .view .line_top .text_top {
 	opacity: 1
 }
-.banner.show .view .img_product{
+.banner .view .img_product{
 	position: absolute;
 	top: 131px;
 	left: 827px;
@@ -332,52 +440,69 @@ body {
 	height: 485px;
 	/*transform: rotate(8deg);*/
 	background-size: contain;
+	margin-top: -800px;
+	transition: margin 0.5s;
+	-webkit-transition: margin 0.5s;
+	-moz-transition:  margin 0.5s;
+	-ms-transition:  margin 0.5s;
+	-o-transition: margin 0.5s;
 }
 .banner.show .view .img_product.show {
 	animation-name: show_img;
 	animation-duration: 1s;
 	animation-timing-function: ease;
+	margin-top: 0px;
+
+	transition: margin 0.5s;
+	-webkit-transition: margin 0.5s;
+	-moz-transition:  margin 0.5s;
+	-ms-transition:  margin 0.5s;
+	-o-transition: margin 0.5s;
 }
 .banner .view .line_bottom{
 	position: absolute;
-    top: 510px;
-    right: -50%;
-    width: 390px;
-    height: 250px;
-    background-color: #d70000;
-    /* box-shadow: 0 0 10px #000; */
-    padding-left: 200px;
-    /* display: table; */
-    /* box-sizing: border-box; */
-    background: url(../image/RedLineBottom.png) no-repeat;
-    background-size: auto 100%;
-    transition: right 0.8s ease;
+	top: 510px;
+	right: -50%;
+	width: 390px;
+	height: 250px;
+	background-color: #d70000;
+	padding-left: 200px;
+	padding-top: 20px;
+	background: url(../image/RedLineBottom.png) no-repeat;
+	background-size: auto 100%;
+	transition: right 0.8s ease;
+	-webkit-transition: right 0.8s ease;
+	-moz-transition:  right 0.8s ease;
+	-ms-transition:  right 0.8s ease;
+	-o-transition: right 0.8s ease;
+
 }
 .banner.show .view .line_bottom {
 	right: 0;
 }
 
-.banner.show .view .line_bottom .cont_text {
+.banner .view .line_bottom .cont_text {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.banner.show .view .line_bottom .text{
+.banner .view .line_bottom .text{
 	color: #fff;
 	font-size: 40px;
 	line-height: 40px;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform:  translateY(-50%);
+	-ms-transform:  translateY(-50%);
+	-o-transform: translateY(-50%);
 	opacity: 0;
 	margin-left: 80px;
 	width: 360px;
-	/*transition: all 0.5s;*/
 	animation-duration: 1s;
 	animation-timing-function: ease;
-	/*transition: all 0.3s;*/
-	/*animation-timing-function: ease;*/
 }
 
 .banner.show .view .line_bottom .text.show {
@@ -398,9 +523,17 @@ body {
 @keyframes circle {
 	0% {
 		transform: scale(0) rotate(0deg);
+		-webkit-transform:  scale(0) rotate(0deg);
+		-moz-transform:  scale(0) rotate(0deg);
+		-ms-transform:  scale(0) rotate(0deg);
+		-o-transform:  scale(0) rotate(0deg);
 	}
 	100% {
 		transform: scale(1) rotate(737deg);
+		-webkit-transform: scale(1) rotate(737deg);
+		-moz-transform:  scale(1) rotate(737deg);
+		-ms-transform:  scale(1) rotate(737deg);
+		-o-transform: scale(1) rotate(737deg);
 	}
 }
 

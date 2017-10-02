@@ -5,7 +5,15 @@ function briefBanner(){
 	this.index_temt = 0;
 	this.list_data = [];
 	this.init = function(){
+
+		window.addEventListener('keydown', function(e){
+			if (e.keyCode == 27) {
+				self.exitScreen()
+			}
+		})
+
 		parent = createElem('div', 'banner', document.body)
+		parent.id = 'londonPromotion'
 		console.log(parent)
 
 		this.banner = parent
@@ -20,6 +28,7 @@ function briefBanner(){
 
 			var data = self.list_data[self.index_temt]//self.json_xml.data[self.index_temt].data;
 			self.fullScreen()
+			self.banner.classList.add('play');
 			self.startBanner(data)
 		});
 
@@ -111,13 +120,6 @@ function briefBanner(){
 
 		var brand = createElem('div', 'info_brand', blue_line)
 
-		var btn_switch = createElem('div', 'btn_switch', cont_view);
-		btn_switch.innerHTML = 'Next';
-
-		btn_switch.addEventListener('click', function(){
-			self.switchData()
-		})
-
 
 		this.elem_banner = {
 			center: itm_center,
@@ -140,9 +142,7 @@ function briefBanner(){
 		var next_index = (this.index_temt+1)%this.json_xml.data.length;
 
 		var data = this.list_data[next_index];
-		this.index_temt = next_index
-
-		// console.log('data',data)
+		this.index_temt = next_index;
 
 		this.startBanner(data)
 	}
@@ -199,9 +199,32 @@ function briefBanner(){
 		}
 		delete this.json_xml.data
 
-		this.json_xml.data = this.list_data;
-		// console.log(this.list_data, this.json_xml.data)
+		this.sortWas();
 
+		this.json_xml.data = this.list_data;
+	}
+
+	this.sortWas = function(){
+		var data = this.list_data
+
+		for(var d = 0; d < data.length; d++){
+			var itm = data[d];
+
+			if(itm.wasprice && itm.wasprice.length > 1 ){
+				console.log(itm.wasprice.join(','))
+				itm.wasprice = itm.wasprice.sort(function(old, next){
+					if(+old > +next ){
+						return -1 
+					} else if(+old < +next ){
+						return 1 
+					} else {
+						return 0
+					}
+				});
+			}
+		}
+
+		return data
 	}
 	this.getPrice = function(srt){
 		var num = +srt;
@@ -212,10 +235,24 @@ function briefBanner(){
 	}
 
 	this.startBanner = function(data){
-		clearTimeout(this.timeoutClearText)
+		var prev_index = this.index_temt-1;
+		var class_name = 'banner_';
+
+		if(prev_index == -1){
+			prev_index = (this.list_data.length-1)
+		}
+
+		this.banner.classList.remove(class_name + prev_index)
+		this.banner.classList.add(class_name+this.index_temt)
+
+
+		clearTimeout(this.timeoutClearText);
+		if(this.timeoutSwitch){
+			clearTimeout(this.timeoutSwitch)
+		}
 		self.elem_banner.img_product.classList.remove('show');
 		self.elem_banner.img_product.style.backgroundImage = '';
-		parent.classList.add('show');
+		this.banner.classList.add('show');
 
 		var saving = +data.saving;
 
@@ -295,27 +332,28 @@ function briefBanner(){
 
 		if((prev_itm) >= 0){
 			arr_elem[prev_itm].classList.remove('show');
-			arr_elem[prev_itm].classList.add('hide');			
+			arr_elem[prev_itm].classList.add('hide');
 		}
 
-		// if(index < this.arr_text.length){
+		if(index < this.arr_text.length){
 			arr_elem[index_itm].innerHTML = this.arr_text[index];
 			arr_elem[index_itm].classList.remove('hide');
 			arr_elem[index_itm].classList.add('show');
-		// }
+		}
 		
+		// console.log(index)
 
-
-		// if(index < this.arr_text.length){
+		if(index+1 < this.arr_text.length){
 			var next_index = (index+1)%this.arr_text.length
 			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);
-		// } else {
-			// this.banner.classList.add('finish')
-			// this.timeout_text = false;
-		// }
+		} else {
+
+			this.banner.classList.remove('show')
+			this.timeoutSwitch = setTimeout(function(){
+				self.switchData();
+			}, 2000);
+		}
 	}
-
-
 
 	function createElem(tag, class_name, par){
 		var elem = document.createElement(tag);
@@ -330,13 +368,26 @@ function briefBanner(){
 	}
 
 	this.fullScreen = function() {
-		var element = document;//this.banner;
+		var element = document.body;//this.banner;
 		if(element.requestFullscreen) {
 			element.requestFullscreen();
-		} else if(element.webkitrequestFullscreen) {
+		} else if(element.webkitRequestFullscreen) {
 			element.webkitRequestFullscreen();
 		} else if(element.mozRequestFullscreen) {
 			element.mozRequestFullScreen();
+		}
+	}
+
+	this.exitScreen = function() {
+		var element = document.body;//this.banner;
+		if (element.exitFullscreen) {
+			element.exitFullscreen();
+		} else if (element.webkitExitFullscreen) {
+			element.webkitExitFullscreen();
+		} else if (element.mozCancelFullScreen) {
+			element.mozCancelFullScreen();
+		} else if (element.msExitFullscreen) {
+			element.msExitFullscreen();
 		}
 	}
 
