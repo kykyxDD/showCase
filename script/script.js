@@ -1,9 +1,10 @@
-function briefBanner(){
+function briefBanner(params){
 	var parent
 	var self = this
 	var view, cont_view
 	this.index_temt = 0;
 	this.list_data = [];
+	this.params = params
 	this.init = function(){
 
 		window.addEventListener('keydown', function(e){
@@ -36,7 +37,7 @@ function briefBanner(){
 		cont_view = createElem('div', 'cont_view', view)
 
 
-		var url = './data/data.xml';
+		var url = this.params.src//'./data/data.xml';
 		this.loadXML(url);
 	}
 
@@ -85,7 +86,10 @@ function briefBanner(){
 
 	this.createBanner = function(){
 
-		var image = createElem('div', 'img_product', cont_view)
+		var cont_img = createElem('div', 'cont_img', cont_view)
+		var img = createElem('img', '', cont_img)
+		img.setAttribute('width', 'auto');
+		img.setAttribute('height', '100%');
 
 		
 		var line_top = createElem('div', 'line_top', cont_view);
@@ -135,7 +139,8 @@ function briefBanner(){
 			blue_line_top: blue_line,
 			text_price: text_price,
 			brand: brand,
-			img_product: image,
+			cont_img: cont_img,
+			img: img,
 			list_was: list_was
 		}
 	};
@@ -212,7 +217,6 @@ function briefBanner(){
 			var itm = data[d];
 
 			if(itm.wasprice && itm.wasprice.length > 1 ){
-				console.log(itm.wasprice.join(','))
 				itm.wasprice = itm.wasprice.sort(function(old, next){
 					if(+old > +next ){
 						return -1 
@@ -251,8 +255,8 @@ function briefBanner(){
 		if(this.timeoutSwitch){
 			clearTimeout(this.timeoutSwitch)
 		}
-		self.elem_banner.img_product.classList.remove('show');
-		self.elem_banner.img_product.style.backgroundImage = '';
+		self.elem_banner.cont_img.classList.remove('show');
+		self.elem_banner.img.src = ''; // .style.backgroundImage = '';
 		this.banner.classList.add('show');
 
 		var saving = +data.saving;
@@ -287,8 +291,8 @@ function briefBanner(){
 		var img = new Image();
 		img.src = data.productimageurl;
 		img.onload = function(){
-			self.elem_banner.img_product.style.backgroundImage = 'url('+this.src+')';
-			self.elem_banner.img_product.classList.add('show');
+			self.elem_banner.img.src = this.src//.style.backgroundImage = 'url('+this.src+')';
+			self.elem_banner.cont_img.classList.add('show');
 		}
 	}
 
@@ -329,7 +333,6 @@ function briefBanner(){
 		var index_itm = index%2;
 
 		var next_index = (index+1)%this.arr_text.length
-		// console.log(next_index, prev_itm)
 
 		if((prev_itm) >= 0){
 			arr_elem[prev_itm].classList.remove('show');
@@ -341,8 +344,6 @@ function briefBanner(){
 			arr_elem[index_itm].classList.remove('hide');
 			arr_elem[index_itm].classList.add('show');
 		}
-		
-		// console.log(index)
 
 		if(index+1 < this.arr_text.length){
 			var next_index = (index+1)%this.arr_text.length
