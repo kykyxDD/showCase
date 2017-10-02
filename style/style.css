@@ -9,14 +9,12 @@ body {
     width: 100vw;
 }
 @font-face {
-  font-family: HelveticaNeueLTPro;
-  src: url(../Fonts/HelveticaNeueLTPro-HvCn.otf) format("opentype");
+	font-family: 'HelveticaNeueLTPro';
+	src: url(../Fonts/tt0173m_.ttf);
+	font-weight: normal;
+	font-style: normal;
 }
-@font-face {
-  font-family: HelveticaNeueLTPro;
-  src: url(../Fonts/HelveticaNeueLTPro-HvCnO.otf) format("opentype");
-  font-style: italic;
-}
+
 .banner:-webkit-full-screen,
 body:-webkit-full-screen {
   background-color: #fff;
@@ -36,16 +34,10 @@ body:fullscreen {
 
 
 
-
-
 .banner {
-	/*width: 1200px;*/
-	/*height: 800px;*/
 
 	width: 1352px;
 	height: 800px;
-/*	width: 1920px;
-	height: 1160px;*/
 	margin: 50px auto 0;
 	border: 1px solid black;
     position: fixed;
@@ -106,7 +98,6 @@ body:fullscreen {
 }
 
 .banner .view {
-	/*opacity: 0;*/
 	pointer-events: none;
 	position: absolute;
 	top: 0;
@@ -116,7 +107,7 @@ body:fullscreen {
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
-	font-family: HelveticaNeueLTPro;
+	font-family: 'HelveticaNeueLTPro', Helvetica, Arial, sans-serif;
 
 	overflow: hidden;
 }
@@ -132,7 +123,6 @@ body:fullscreen {
 .banner.show .view {
 	opacity: 1;
 	pointer-events: auto;
-	/*background:url(../image/bg_view.png);*/
 	background-size: contain;
 	overflow: hidden;
 }
@@ -166,18 +156,18 @@ body:fullscreen {
 }
 .banner .view .circle{
 	position: absolute;
-    left: 700px;
-    top: 532px;
+	left: 50%;
+    bottom: 125px;
     width: 290px;
     height: 290px;
     margin-top: -145px;
-    margin-left: -145px;
+    margin-left: -125px;
     background: url(../image/Circle.png) no-repeat;
 
-	animation-duration: 1s;
+
 	animation-name: none;
 	animation-iteration-count: 1;
-	animation-timing-function: ease;/*easeInOutCubic;*/
+	animation-timing-function: ease;
 	
 	background-size: contain;
 	color: #fff;
@@ -206,7 +196,10 @@ body:fullscreen {
 	-moz-transform: scale(1) rotate(17deg);
     -ms-transform: scale(1) rotate(17deg);
     -o-transform: scale(1) rotate(17deg);
-	animation-name: circle;
+
+	animation-name: hide_circle, circle;
+	animation-duration: 1.5s, 0.7s;
+	animation-delay: 0s, 1.5s;
 }
 
 .banner .view .circle .text1 {
@@ -218,11 +211,9 @@ body:fullscreen {
 .banner .view .circle .price {
     font-size: 110px;
     line-height: 110px;
-    /*text-indent: 30px;*/
-
 }
 .banner .view .circle > div{
-	/*text-indent: 20px;*/
+
 }
 .banner .view .btn_switch{
 	bottom: 8px;
@@ -313,10 +304,8 @@ body:fullscreen {
 	text-transform: uppercase;
 	font-size: 69px;
 	text-shadow: 4px 4px 1px rgba(62, 68, 86, 1);
-	/*text-indent: 35px;*/
-	line-height: 47px;
-	padding-top: 13px;
-	margin-left: -50%;
+    line-height: 59px;
+    margin-left: -50%;
 	transition: margin 0.5s ease 1s;
 	-webkit-transition:margin 0.5s ease 1s;
 	-moz-transition: margin 0.5s ease 1s;
@@ -368,66 +357,57 @@ body:fullscreen {
 
 .banner .view .line_top{
 	color: white;
-	/*background-color: #d70000;*/
 	position: absolute;
 	top: 73px;
 	width: 50%;	
-	height: 109px;
-	/*line-height: 130px;*/
-	/*text-indent: 52px;*/
 	text-align: center;
-	font-size: 68px;
-	text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	/*box-sizing: border-box;*/
-	
+	padding-top: 5px;
+	padding-bottom: 10px;
+	height: 92px;
+	left: -50%;
+
+
+	transition: left 0.7s ease 0s;
+	-webkit-transition: left 0.7s ease 0s;
+	-moz-transition:  left 0.7s ease 0s;
+	-ms-transition:  left 0.7s ease 0s;
+	-o-transition: left 0.7s ease 0s;
+}
+
+.banner.show .view .line_top {
+	left: 0;
+}
+
+.banner .view .line_top .cont_text{
+	position: relative;
+	height: 100%;
+	width: 90%;
+	display: table;
 }
 .banner .view .line_top .text_top{
-	position: absolute;
-	top: 0;
-	left: 0px;
-	opacity: 0;
-	width: 90%;
-	transition: opacity 1s ease 0s, left 1s ease 0s;
+	display: table-cell;
+	width: 100%;
+	vertical-align: middle;
+	font-size: 68px;
+	line-height: 68px;
+	text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+	/*opacity: 0;*/
+	transition: opacity 1s ease 0s;
+	-webkit-transition:opacity 1s ease 0s;
+	-moz-transition: opacity 1s ease 0s;
+	-ms-transition: opacity 1s ease 0s;
+	-o-transition:opacity 1s ease 0s;
+}
 
-	-webkit-transition:opacity 1s ease 0s, left 1s ease 0s;
-	-moz-transition: opacity 1s ease 0s, left 1s ease 0s;
-	-ms-transition: opacity 1s ease 0s, left 1s ease 0s;
-	-o-transition:opacity 1s ease 0s, left 1s ease 0s;
-	/*height: 65px;*/
-    bottom: 0;
-    margin: auto;
-    padding-top: 10px;
-}
-.banner.show .view .line_top .text_top {
-	transition: opacity 1s ease 0.8s;
--webkit-transition: opacity 1s ease 0.8s;
-	-moz-transition:  opacity 1s ease 0.8s;
-	-ms-transition:  opacity 1s ease 0.8s;
-	-o-transition: opacity 1s ease 0.8s;
-}
 .banner .view .line_top .bg_top {
 	width: 100%;
 	height: 100%;
 	background: url(../image/RedLineTop.png) no-repeat;
-	/*background-size: cover;*/
 	background-size: contain;
-
-/*	background-position-x: right;
-	background-position-y: center;*/
-	/*background-size: auto 100%;*/
 	position: absolute;
 	top: 0;
-	left: -100%;
-	transition: left 0.7s ease 0.3s;
-	-webkit-transition: left 0.7s ease 0.3s;
-	-moz-transition:  left 0.7s ease 0.3s;
-	-ms-transition:  left 0.7s ease 0.3s;
-	-o-transition: left 0.7s ease 0.3s;
 }
-.banner.show .view .line_top .bg_top,
-.banner.show .view .line_top .text_top {
-	left: 0;
-}
+
 
 .banner.show .view .line_top .text_top {
 	opacity: 1
@@ -438,7 +418,6 @@ body:fullscreen {
 	left: 827px;
 	width: 485px;
 	height: 485px;
-	/*transform: rotate(8deg);*/
 	background-size: contain;
 	margin-top: -800px;
 	transition: margin 0.5s;
@@ -461,7 +440,7 @@ body:fullscreen {
 }
 .banner .view .line_bottom{
 	position: absolute;
-	top: 510px;
+	bottom: 20px;
 	right: -50%;
 	width: 390px;
 	height: 250px;
@@ -518,6 +497,22 @@ body:fullscreen {
 	margin-left: -130px;
 }
 
+@keyframes hide_circle {
+	0% {
+		transform: scale(0) rotate(0deg);
+		-webkit-transform:  scale(0) rotate(0deg);
+		-moz-transform:  scale(0) rotate(0deg);
+		-ms-transform:  scale(0) rotate(0deg);
+		-o-transform:  scale(0) rotate(0deg);
+	}
+	100% {
+		transform: scale(0) rotate(0deg);
+		-webkit-transform:  scale(0) rotate(0deg);
+		-moz-transform:  scale(0) rotate(0deg);
+		-ms-transform:  scale(0) rotate(0deg);
+		-o-transform:  scale(0) rotate(0deg);
+	}
+}
 
 
 @keyframes circle {

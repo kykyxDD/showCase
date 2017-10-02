@@ -91,7 +91,8 @@ function briefBanner(){
 		var line_top = createElem('div', 'line_top', cont_view);
 
 		var cont_bg_top = createElem('div', 'bg_top', line_top);
-		var text_top = createElem('div', 'text_top', line_top)
+		var cont_text = createElem('div', 'cont_text', line_top)
+		var text_top = createElem('div', 'text_top', cont_text)
 
 
 		var blue_line = createElem('div', 'blue_line', cont_view);
