@@ -6,7 +6,7 @@ function briefBanner(params){
 	this.list_data = [];
 	this.params = params
 
-	this.full_screen = true
+	this.full_screen = true//false
 	this.init = function(){
 
 		window.addEventListener('keydown', function(e){
@@ -17,7 +17,7 @@ function briefBanner(params){
 
 		parent = createElem('div', 'banner', document.body)
 		parent.id = 'londonPromotion'
-		console.log(parent)
+		// console.log(parent)
 
 		this.banner = parent
 
@@ -39,7 +39,7 @@ function briefBanner(params){
 		cont_view = createElem('div', 'cont_view', view)
 
 
-		var url = this.params.src//'./data/data.xml';
+		var url = this.params && this.params.src ? this.params.src : './data/data.xml';
 		this.loadXML(url);
 	}
 
@@ -107,16 +107,19 @@ function briefBanner(params){
 		var cont_star = createElem('div', 'cont_star', itm_center);
 
 		this.arr_star = []
+
+		this.radius = itm_center.offsetWidth;
+		// console.log('radius',this.radius)
 		for(var i = 0;i<10;i++){
-			var star = createElem('div', 'star', cont_star);
-			this.arr_star.push(star);
+			this.createStar(cont_star,i)
+
 			//star.style.left = Math.floor(Math.random()*50+50) + "px";
 		}
+		var cont_text = createElem('div','cont_text', itm_center)
 
-
-		var center_text1 = createElem('div', 'text1', itm_center)
+		var center_text1 = createElem('div', 'text1', cont_text)
 		center_text1.innerHTML = 'save';
-		var center_price = createElem('div', 'price', itm_center)
+		var center_price = createElem('div', 'price', cont_text)
 		var line_bottom = createElem('div', 'line_bottom', cont_view);
 		var cont_line_bottom = createElem('div', 'cont_line_bottom', line_bottom);
 		var cont_text = createElem('div', 'cont_text', cont_line_bottom);
@@ -157,6 +160,64 @@ function briefBanner(params){
 			list_was: list_was
 		}
 	};
+
+	this.createStar = function(par, id){
+		var star = createElem('div', 'star star_'+id, par);
+		var coor = this.getCoorStar()
+
+		star.style.left = Math.floor(coor.start.x) + 'px';
+		star.style.top = Math.floor(coor.start.y) + 'px';
+
+		var anim = CSSAnimations.create('star_'+id, {
+			'0%': {
+				'left': coor.start.x + 'px',
+				'top': coor.start.y + 'px'
+			},// { 'background-color': 'red' },
+			'100%': {
+				'left': coor.finish.x + 'px',
+				'top': coor.finish.y + 'px'
+			}
+		});
+		// console.log(anim)
+
+		var str =  'star_'+id+',star_alpha,star_rotate';
+		// star.style.animationName = 'star_'+id
+		star.style.animationName = str
+		var d = 2*Math.random();
+		star.style.animationDelay = d+'s'; //1,5s
+
+		this.arr_star.push(star);
+	}
+	this.getCoorStar = function(){
+		var angle = Math.random()*Math.PI;
+		// console.log(angle)
+		var r = this.radius/2;
+		var dirang = 1;//Math.random()*(Math.PI)//0.2;
+
+		var x_1 = Math.cos(angle)*(r*Math.random());
+		var y_1 = Math.sin(angle)*(r*Math.random());
+		
+
+		var dirvx = Math.cos(dirang)
+		var dirvy = Math.sin(dirang)
+		var dist = Math.random()*((r*2)*0.7)
+
+		var npx = x_1 + dirvx*dist;
+		var npy = y_1 - dirvy*dist;
+		// console.log('coor x:', x_1, npx)
+		// console.log('coor y:', y_1, npy)
+
+		return {
+			start: {
+				x: Math.floor(x_1),	
+				y: Math.floor(y_1)
+			},
+			finish: {
+				x: Math.floor(npx),	
+				y: Math.floor(npy)
+			}
+		}
+	}
 	this.switchData = function(){
 		var next_index = (this.index_temt+1)%this.json_xml.data.length;
 
@@ -313,10 +374,8 @@ function briefBanner(params){
 		this.elem_banner.red_line_bottom[0].innerHTML = '';
 		this.elem_banner.red_line_bottom[1].innerHTML = '';
 
-
 		this.elem_banner.red_line_bottom[0].classList.remove('show');
 		this.elem_banner.red_line_bottom[1].classList.remove('show');
-
 
 		this.elem_banner.red_line_bottom[0].classList.remove('hide');
 		this.elem_banner.red_line_bottom[1].classList.remove('hide');

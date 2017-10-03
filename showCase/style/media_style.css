@@ -84,4 +84,162 @@
 		width: 45%;
 		line-height: 65px;
 	}
+
+	.banner .view .line_bottom {
+		height: 220px;
+	}
+	.banner .view .blue_line .text_price {
+		line-height: 95px;
+		font-size: 125px;
+	}
+	.banner .view .blue_line .text_now {
+		font-size: 45px;
+		line-height: 45px;
+
+	}
+	.banner .view .blue_line .was {
+		font-size: 25px;
+	}
+	.banner .view .blue_line .info_brand {
+		top: -25px;
+		font-size: 16px;
+		text-indent: 35px;
+	}
+	.banner .view .circle {
+		bottom: 125px;
+		width: 250px;
+		height: 250px;
+		margin-top: -125px;
+		margin-left: -125px;
+	}
+	.banner .view .circle .text1 {
+		font-size: 70px;
+		padding-top: 48px;
+		line-height: 62px;
+	}
+	.banner .view .circle .price {
+		font-size: 95px;
+		line-height: 100px;
+	}
+
+	.banner .view .line_bottom .text {
+
+		font-size: 35px;
+		line-height: 35px;
+	}
+	.banner .view .line_top .text_top {
+		font-size: 60px;
+		line-height: 60px;
+	}
+	.banner .view .line_top {
+		height: 75px;
+	}
+}
+
+@media screen and (min-height: 1000px)  {
+	.banner .view .cont_img {
+		height: 65%
+	}
+
+	.banner.show .view .cont_img.show {
+		top: 50%
+	}
+	.banner .view .circle {	
+		bottom: 135px;
+		width: 350px;
+		height: 350px;
+		margin-top: -175px;
+		margin-left: -175px;
+	}
+	.banner .view .circle .text1{
+		font-size: 100px;
+		line-height: 75px;
+		padding-top: 75px;
+	}
+	.banner .view .circle .price {
+		font-size: 135px;
+		line-height: 130px;
+	}
+
+	.banner .view .line_top{
+		height: 110px;
+		padding-right: 85px;
+	}
+
+	.banner .view .line_top .bg_top:before{
+		height: 140px;
+		bottom: 6px;
+		right: -47px;
+	}
+
+	.banner .view .line_top .text_top{
+		font-size: 75px;
+		line-height: 76px
+	}
+	.banner .view .circle .cont_star .star {
+		width: 100px;
+		height: 100px;
+		margin-top: -50px;
+		margin-left: -50px;
+	}
+
+	.banner .view .blue_line .info_brand{
+		font-size: 26px;
+	}
+
+	.banner .view .blue_line {
+		bottom: -400px;
+	}
+
+	@keyframes show_img {
+		0% {
+			top: -150%;
+		}
+		30%{
+			top: 60%;
+		}
+		50%{
+			top: 30%;
+		}
+		100% {
+			top: 50%;
+		}
+	}
+
+	.banner .view .desc {
+		top: 30%;
+		font-size: 90px;
+		line-height: 90px;
+	}
+
+	.banner .view .line_bottom {
+		height: 290px;
+		padding-left: 210px;
+	}
+	.banner .view .blue_line .text_price {
+		font-size: 170px;
+		line-height: 125px;
+	}
+
+	.banner .view .line_bottom .cont_line_bottom:before {
+		position: absolute;
+		content: '';
+		top: 33px;
+		left: -125px;
+		width: 230px;
+		height: 365px;
+	}
+
+	.banner .view .line_bottom .text {
+		font-size: 45px;
+		line-height: 45px;
+	}
+	.banner .view .blue_line .text_now {
+		/*font-size: 60px;*/
+	}
+
+	.banner .view .blue_line{
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
 }

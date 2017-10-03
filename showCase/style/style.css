@@ -139,22 +139,22 @@ body:fullscreen {
 	line-height: 83px;
 	margin-left: 150px;
 	opacity: 0;
-	transition: all 0.5s ease 0s;
-	-webkit-transition:all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    
+	
+	-webkit-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+	-moz-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    -ms-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    -o-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
 
 }
 .banner.show .view  .desc {
 	margin-left: 0px;
-	opacity: 1;
-	transition: all 0.5s ease 1s;
-	-webkit-transition: all 0.5s ease 1s;
-	-moz-transition: all 0.5s ease 1s;
-    -ms-transition: all 0.5s ease 1s;
-    -o-transition: all 0.5s ease 1s;
+	opacity: 1;	
+	-webkit-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+	-moz-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    -ms-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    -o-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
 }
 .banner .view .circle{
 	position: absolute;
@@ -203,7 +203,14 @@ body:fullscreen {
 	animation-duration: 1.5s, 1s;
 	animation-delay: 0s, 1.5s;
 }
-
+.banner .view .circle .cont_text{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
 .banner .view .circle .text1 {
 	font-size: 78px;
 	padding-top: 64px;
@@ -217,19 +224,52 @@ body:fullscreen {
 .banner .view .circle > div{
 
 }
+
+.banner .view .circle .cont_star{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0px;
+	height: 0px;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.banner.show .view .circle .cont_star {
+	opacity: 1;
+	transition: opacity 0.5s ease 1.5s;
+}
+.banner .view .circle .cont_star .star {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+	margin-left: -20px;
+	background-image: url(../image/star.png);
+	background-position: center;
+	background-size: contain;
+	animation-name: none;
+	animation-duration: 0s;
+	transition: left 1s, top 1s;
+}
+.banner.show .view .circle .cont_star .star {
+	transition: left 0s, top 0s;
+	animation-duration: 2s;
+	animation-name: star_alpha,star_rotate;
+	animation-iteration-count: infinite;
+}
 .banner .view .btn_switch{
 	bottom: 8px;
-    position: absolute;
-    color: White;
-    left: 50%;
-    margin-left: -40px;
-    width: 80px;
-    text-align: center;
-    height: 30px;
-    line-height: 33px;
-    background: #025F02;
-    border-radius: 5px;
-    cursor: pointer;
+	position: absolute;
+	color: white;
+	left: 50%;
+	margin-left: -40px;
+	width: 80px;
+	text-align: center;
+	height: 30px;
+	line-height: 33px;
+	background: #025F02;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 
@@ -371,7 +411,6 @@ body:fullscreen {
 	height: 92px;
 	left: -70%;
 
-
 	transition: left 0.7s ease 0s;
 	-webkit-transition: left 0.7s ease 0s;
 	-moz-transition:  left 0.7s ease 0s;
@@ -382,7 +421,7 @@ body:fullscreen {
 .banner.show .view .line_top {
 	left: 0;
 }
-.banner.show .view .line_top .cont_line_top {
+.banner .view .line_top .cont_line_top {
 	position: relative;
 	width: 100%;
 	height: 100%;
@@ -405,9 +444,8 @@ body:fullscreen {
 	font-size: 68px;
 	line-height: 68px;
 	text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-	/*opacity: 0;*/
 	transition: opacity 1s ease 0s;
-	-webkit-transition:opacity 1s ease 0s;
+	-webkit-transition: opacity 1s ease 0s;
 	-moz-transition: opacity 1s ease 0s;
 	-ms-transition: opacity 1s ease 0s;
 	-o-transition:opacity 1s ease 0s;
@@ -417,9 +455,6 @@ body:fullscreen {
 
 .banner .view .line_top .bg_top {
 	width: 100%;
-	/*height: 100%;*/
-	/*background: url(../image/RedLineTop.png) no-repeat;*/
-	/*background-size: contain;*/
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -431,7 +466,8 @@ body:fullscreen {
     content: '';
     width: 65px;
     height: 111px;
-    top: -27px;
+    /*top: -27px;*/
+    bottom: 9px;
     right: -38px;
     background-color: #D70000;
     transform: rotate(35deg);
@@ -439,20 +475,6 @@ body:fullscreen {
     /* border-left: 63px solid #866060; */
     box-shadow: 3px 0 5px #8A8A8A;
 }
-.banner .view .line_top .bg_top:after {
-	position: absolute;
-    /*content: '';*/
-    width: 63px;
-    height: 110px;
-    top: -27px;
-    right: -35px;
-    background-color: #D70000;
-    transform: rotate(35deg);
-    /* border-bottom: 90px solid transparent; */
-    /* border-left: 63px solid #866060; */
-    box-shadow: 3px 0 5px #615555;
-}
-
 
 .banner.show .view .line_top .text_top {
 	opacity: 1
@@ -552,7 +574,7 @@ body:fullscreen {
 	-o-transform: translateY(-50%);
 	opacity: 0;
 	margin-left: 80px;
-	width: 360px;
+	width: 100%;
 	animation-duration: 1s;
 	animation-timing-function: ease;
 }
@@ -621,6 +643,26 @@ body:fullscreen {
 }
 
 
+@keyframes star_alpha {
+	0%{
+		opacity: 0
+	}
+	50%{
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
+@keyframes star_rotate {
+	0%{
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
 @keyframes show_text {
 	0% {
 		opacity: 0;
@@ -646,20 +688,16 @@ body:fullscreen {
 
 @keyframes show_img {
 	
-	0% {
-		/*margin-top: -400px;*/
+	0%  {
 		top: -150%;
 	}
-	30%{
-		/*margin-top: 50px;*/
+	30% {
 		top: 60%;
 	}
-	50%{
-		/*margin-top: -60px;*/
+	50% {
 		top: 30%;
 	}
-	100% {		
-		/*margin-top: 0px;*/
+	100% {
 		top: 45%;
 	}
 }

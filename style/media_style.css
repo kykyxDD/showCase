@@ -177,10 +177,18 @@
 		line-height: 76px
 	}
 	.banner .view .circle .cont_star .star {
-		width: 60px;
-		height: 60px;
-		margin-top: -30px;
-		margin-left: -30px;
+		width: 100px;
+		height: 100px;
+		margin-top: -50px;
+		margin-left: -50px;
+	}
+
+	.banner .view .blue_line .info_brand{
+		font-size: 28px;
+	}
+
+	.banner .view .blue_line {
+		bottom: -400px;
 	}
 
 	@keyframes show_img {
@@ -196,5 +204,42 @@
 		100% {
 			top: 50%;
 		}
+	}
+
+	.banner .view .desc {
+		top: 30%;
+		font-size: 90px;
+		line-height: 90px;
+	}
+
+	.banner .view .line_bottom {
+		height: 290px;
+		padding-left: 210px;
+	}
+	.banner .view .blue_line .text_price {
+		font-size: 170px;
+		line-height: 125px;
+	}
+
+	.banner .view .line_bottom .cont_line_bottom:before {
+		position: absolute;
+		content: '';
+		top: 33px;
+		left: -125px;
+		width: 230px;
+		height: 365px;
+	}
+
+	.banner .view .line_bottom .text {
+		font-size: 45px;
+		line-height: 45px;
+	}
+	.banner .view .blue_line .text_now {
+		/*font-size: 60px;*/
+	}
+
+	.banner .view .blue_line{
+		padding-top: 20px;
+		padding-bottom: 20px;
 	}
 }

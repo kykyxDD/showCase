@@ -24,6 +24,7 @@ function briefBanner(params){
 
 		var cont_start = createElem('div', 'cont_start', parent);
 		var cont_btn = createElem('div', 'cont_btn', cont_start);
+
 		var btn_start = createElem('div', 'btn_start', cont_btn);
 		btn_start.innerHTML = 'start';
 
@@ -183,8 +184,8 @@ function briefBanner(params){
 		var str =  'star_'+id+',star_alpha,star_rotate';
 		// star.style.animationName = 'star_'+id
 		star.style.animationName = str
-		var d = 2*Math.random()
-		star.style.animationDelay = d+'s';
+		var d = 2*Math.random();
+		star.style.animationDelay = d+'s'; //1,5s
 
 		this.arr_star.push(star);
 	}

@@ -139,22 +139,22 @@ body:fullscreen {
 	line-height: 83px;
 	margin-left: 150px;
 	opacity: 0;
-	transition: all 0.5s ease 0s;
-	-webkit-transition:all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    
+	
+	-webkit-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+	-moz-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    -ms-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    -o-transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
+    transition: margin 0.5s ease 0s, opacity 0.5s ease 0s;
 
 }
 .banner.show .view  .desc {
 	margin-left: 0px;
-	opacity: 1;
-	transition: all 0.5s ease 1s;
-	-webkit-transition: all 0.5s ease 1s;
-	-moz-transition: all 0.5s ease 1s;
-    -ms-transition: all 0.5s ease 1s;
-    -o-transition: all 0.5s ease 1s;
+	opacity: 1;	
+	-webkit-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+	-moz-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    -ms-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    -o-transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
+    transition:  margin 0.5s ease 1s, opacity 0.5s ease 1s;
 }
 .banner .view .circle{
 	position: absolute;
