@@ -6,7 +6,11 @@ function briefBanner(params){
 	this.list_data = [];
 	this.params = params
 
-	this.full_screen = true//false
+	this.full_screen = true;
+	this.input_file = false
+
+	this.create_input = true;
+
 	this.init = function(){
 
 		window.addEventListener('keydown', function(e){
@@ -16,24 +20,30 @@ function briefBanner(params){
 		})
 
 		parent = createElem('div', 'banner', document.body)
-		parent.id = 'londonPromotion'
-		// console.log(parent)
+		parent.id = 'londonPromotion';
 
-		this.banner = parent
-
+		this.banner = parent;
 
 		var cont_start = createElem('div', 'cont_start', parent);
 		var cont_btn = createElem('div', 'cont_btn', cont_start);
 
+		if(this.create_input){
+
+			var cont_input = createElem('div', 'cont_input', cont_start);
+			var input = createElem('input', 'url',cont_input);
+			input.type = 'text';
+			input.setAttribute('value', window.xml_url);
+
+			this.input_file = input
+		} 
+
 		var btn_start = createElem('div', 'btn_start', cont_btn);
 		btn_start.innerHTML = 'start';
 
-		btn_start.addEventListener('click', function(){
-
-			var data = self.list_data[self.index_temt]//self.json_xml.data[self.index_temt].data;
-			self.fullScreen()
-			self.banner.classList.add('play');
-			self.startBanner(data)
+		btn_start.addEventListener('click', function(e){
+			e.preventDefault()
+			self.fullScreen();
+			self.loadFile()
 		});
 
 		view = createElem('div', 'view', parent)
@@ -41,46 +51,45 @@ function briefBanner(params){
 
 
 		var url = this.params && this.params.src ? this.params.src : './data/data.xml';
-		this.loadXML(url);
+		// this.loadXML(url);
+
+		this.createBanner()
 	}
 
-	this.loadXML = function(filename){
+	this.loadFile = function(){
+		var input = this.input_file;
 
-		// try {
-		//     var xmlhttp = new XMLHttpRequest();
-		//     xmlhttp.open("GET", xmlfile, false);
-		// } catch (Exception) {
-		//     var ie = (typeof window.ActiveXObject != 'undefined');
+		var url = input ? input.value : this.params.src;
 
-		//     if (ie){
-		//         xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-		//         xmlDoc.async = false;
-		//         while(xmlDoc.readyState != 4) {};
-		//         xmlDoc.load(xmlfile);
-		//         readXML();
-		//         xmlloaded = true;
-		//     } else {
-		//         xmlDoc = document.implementation.createDocument("", "", null);
-		//         xmlDoc.onload = readXML;
-		//         xmlDoc.load(xmlfile);
-		//         xmlloaded = true;
-		//     }
-		// }
+		this.local_url = url
 
-		// if (!xmlloaded){
-		//     xmlhttp.setRequestHeader('Content-Type', 'text/xml')
-		//     xmlhttp.send("");
-		//     xmlDoc = xmlhttp.responseXML;
-		//     readXML();
-		//     xmlloaded = true;
-		// }
+		this.updateXML()
+	}
+	this.updateXML = function(){
+		// console.log('updateXML')
+		this.banner.classList.add('load');
+		this.loadXML(this.showBanner.bind(this))
+	}
+
+	this.showBanner = function(){
+		this.banner.classList.remove('load');
+		this.banner.classList.add('play');
+		var data = this.list_data[this.index_temt];
+
+		this.startBanner(data)
+	}
+
+	this.loadXML = function(callback){
+
 		var self = this;
+
+		var filename = this.local_url;
 
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				self.createBanner()
 				self.runData(this.responseXML)
+				callback()				
 			}
 		};
 		xhttp.open("GET", filename, true);
@@ -179,21 +188,18 @@ function briefBanner(params){
 				'top': coor.finish.y + 'px'
 			}
 		});
-		// console.log(anim)
 
 		var str =  'star_'+id+',star_alpha,star_rotate';
-		// star.style.animationName = 'star_'+id
 		star.style.animationName = str
 		var d = 2*Math.random();
-		star.style.animationDelay = d+'s'; //1,5s
+		star.style.animationDelay = d+'s';
 
 		this.arr_star.push(star);
 	}
 	this.getCoorStar = function(){
 		var angle = Math.random()*Math.PI;
-		// console.log(angle)
 		var r = this.radius/2;
-		var dirang = 1;//Math.random()*(Math.PI)//0.2;
+		var dirang = 1;
 
 		var x_1 = Math.cos(angle)*(r*Math.random());
 		var y_1 = Math.sin(angle)*(r*Math.random());
@@ -205,8 +211,6 @@ function briefBanner(params){
 
 		var npx = x_1 + dirvx*dist;
 		var npy = y_1 - dirvy*dist;
-		// console.log('coor x:', x_1, npx)
-		// console.log('coor y:', y_1, npy)
 
 		return {
 			start: {
@@ -220,23 +224,28 @@ function briefBanner(params){
 		}
 	}
 	this.switchData = function(){
-		var next_index = (this.index_temt+1)%this.json_xml.data.length;
 
-		var data = this.list_data[next_index];
-		this.index_temt = next_index;
+		if(this.index_temt+1 < this.list_data.length){
+			var next_index = (this.index_temt+1)%this.list_data.length;
 
-		this.startBanner(data)
+			var data = this.list_data[next_index];
+			this.index_temt = next_index;
+
+			this.startBanner(data)
+		} else {
+			this.index_temt = 0
+			this.updateXML()
+		}
 	}
 
 	this.runData = function(data){
-		var xml = data.children[0]
-		// console.log(xml)
+		var xml = data.children[0];
 
 		this.json_xml = {};
+		this.list_data = []
 
 		for(var i = 0; i < xml.children.length; i++){
 			var child = xml.children[i]
-			// console.log('child', child)
 			var key = child.tagName.toLocaleLowerCase()
 			var elem
 			if(!child.children.length) {
@@ -250,8 +259,7 @@ function briefBanner(params){
 		if(this.json_xml.data && this.json_xml.data.length) {
 			var itm_data = this.json_xml.data
 			for(var i = 0; i < itm_data.length; i++){
-				var itm = itm_data[i]
-				// console.log(itm)
+				var itm = itm_data[i];
 				var parse_data = {};
 				if(!itm.children.length) continue
 				for(var j = 0; j < itm.children.length; j++){
@@ -315,6 +323,7 @@ function briefBanner(params){
 	}
 
 	this.startBanner = function(data){
+
 		var prev_index = this.index_temt-1;
 		var class_name = 'banner_';
 
@@ -331,7 +340,7 @@ function briefBanner(params){
 			clearTimeout(this.timeoutSwitch)
 		}
 		self.elem_banner.cont_img.classList.remove('show');
-		self.elem_banner.img.src = ''; // .style.backgroundImage = '';
+		self.elem_banner.img.src = '';
 		this.banner.classList.add('show');
 
 		var saving = +data.saving;
@@ -397,6 +406,10 @@ function briefBanner(params){
 	}
 	this.removeWasprice = function(){
 		this.banner.classList.add('no_wasprice');
+		var list_was = this.elem_banner.list_was;
+		while(list_was.children.length){
+			list_was.removeChild(list_was.children[0])
+		}
 	}
 
 	this.animationText = function(index){
@@ -425,10 +438,9 @@ function briefBanner(params){
 			if(this.full_screen){
 				this.banner.classList.remove('show')
 				this.timeoutSwitch = setTimeout(function(){
-				self.switchData();
+					self.switchData();
 				}, 2000);
 			}
-			
 		}
 	}
 
@@ -445,18 +457,20 @@ function briefBanner(params){
 	}
 
 	this.fullScreen = function() {
-		var element = document.body;//this.banner;
-		if(element.requestFullscreen) {
-			element.requestFullscreen();
-		} else if(element.webkitRequestFullscreen) {
-			element.webkitRequestFullscreen();
-		} else if(element.mozRequestFullscreen) {
-			element.mozRequestFullScreen();
+		var element = this.banner; //document.documentElement;//
+		if (document.documentElement.requestFullscreen) {
+			document.documentElement.requestFullscreen();
+		} else if (document.documentElement.msRequestFullscreen) {
+			document.documentElement.msRequestFullscreen();
+		} else if (document.documentElement.mozRequestFullScreen) {
+			document.documentElement.mozRequestFullScreen();
+		} else if (document.documentElement.webkitRequestFullscreen) {
+			document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
 		}
 	}
 
 	this.exitScreen = function() {
-		var element = document.body;//this.banner;
+		var element = this.banner; //document.documentElement;//
 		if (element.exitFullscreen) {
 			element.exitFullscreen();
 		} else if (element.webkitExitFullscreen) {
