@@ -2,163 +2,250 @@
 <Result>SUCCESS</Result>
 <Data>
 <Record>
-<Barcode>88001001</Barcode>
-<Brand>Fossil</Brand>
+<Brand>LG</Brand>
 <ClassCode>_UU</ClassCode>
 <ClassId>1</ClassId>
 <ClassName>Unclassified</ClassName>
-<Code>99001</Code>
+<CreditIndicator>0</CreditIndicator>
+<Code>20042</Code>
 <CultureCode>en-GB</CultureCode>
 <CurrencySymbol>£</CurrencySymbol>
 <CurrencySymbolMinor>p</CurrencySymbolMinor>
 <CurrencyType>GBP</CurrencyType>
-<Description>Automatic Navy Leather Watch</Description>
-<DisplayCode>99001</DisplayCode>
-<EndDate>9999-12-31T00:00:00+00:00</EndDate>
-<EndDateText>9999-12-31T00:00:00</EndDateText>
-<Feature1>Three hand automatic movement</Feature1>
-<Feature2>Exposed Dial</Feature2>
-<Feature3>Genuine leather strap</Feature3>
-<Feature4>All-round timeless look</Feature4>
-<ItemFABId>7</ItemFABId>
-<Model>ME3054</Model>
-<PrintQueueId>0</PrintQueueId>
-<ItemId>100019</ItemId>
-<ProductImageURL>
-https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=99001.png
-</ProductImageURL>
-<Quantity>1</Quantity>
-<Retail>85.0000</Retail>
-<Saving>214.0000</Saving>
-<StartDate>2017-09-20T00:00:00+01:00</StartDate>
-<StartDateText>2017-09-20T00:00:00</StartDateText>
-<StoreCode>900</StoreCode>
-<StoreId>12</StoreId>
-<StoreName>The Technology Store</StoreName>
-<ItemPriceId>3113</ItemPriceId>
-<Strapline1>SALE!</Strapline1>
-<WasPrice1>199.0000</WasPrice1>
-<WasPrice2>205.0000</WasPrice2>
-<WasPrice3>299.0000</WasPrice3>
-</Record>
-<Record>
-<Barcode>88002002</Barcode>
-<Brand>TAG Heuer</Brand>
-<ClassCode>_UU</ClassCode>
-<ClassId>1</ClassId>
-<ClassName>Unclassified</ClassName>
-<Code>99002</Code>
-<CultureCode>en-GB</CultureCode>
-<CurrencySymbol>£</CurrencySymbol>
-<CurrencySymbolMinor>p</CurrencySymbolMinor>
-<CurrencyType>GBP</CurrencyType>
-<Description>Formula 1 Chronograph Men's Watch</Description>
-<DisplayCode>99002</DisplayCode>
-<EndDate>9999-12-31T00:00:00+00:00</EndDate>
-<EndDateText>9999-12-31T00:00:00</EndDateText>
-<Feature1>Black perforated rubber strap</Feature1>
-<Feature2>43mm stainless steel case</Feature2>
-<Feature3>Fixed tachymeter bezel</Feature3>
-<Feature4>Scratch resistant sapphire crystal glass</Feature4>
-<ItemFABId>8</ItemFABId>
-<Model>MW8490</Model>
-<PrintQueueId>0</PrintQueueId>
-<ItemId>100020</ItemId>
-<ProductImageURL>
-https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=99002.png
-</ProductImageURL>
-<Quantity>1</Quantity>
-<Retail>1250.9900</Retail>
-<StartDate>2017-09-20T00:00:00+01:00</StartDate>
-<StartDateText>2017-09-20T00:00:00</StartDateText>
-<StoreCode>900</StoreCode>
-<StoreId>12</StoreId>
-<StoreName>The Technology Store</StoreName>
-<ItemPriceId>3234</ItemPriceId>
-<Strapline1>GREAT OFFER</Strapline1>
-</Record>
-<Record>
-<Barcode>88003003</Barcode>
-<Brand>Dior</Brand>
-<ClassCode>201101</ClassCode>
-<ClassId>3</ClassId>
-<ClassName>White Goods</ClassName>
-<Code>99003</Code>
-<CultureCode>en-GB</CultureCode>
-<CurrencySymbol>£</CurrencySymbol>
-<CurrencySymbolMinor>p</CurrencySymbolMinor>
-<CurrencyType>GBP</CurrencyType>
-<Description>J'Adore Eau de Parfum</Description>
-<DisplayCode>99003</DisplayCode>
-<EndDate>9999-12-31T00:00:00+00:00</EndDate>
-<EndDateText>9999-12-31T00:00:00</EndDateText>
-<Feature1>Finely crafted invented bouquet</Feature1>
-<Feature2>100ml spray</Feature2>
-<Feature3>
-The incarnation of absolute femininity in an opulent fruity-floral bouquet
-</Feature3>
-<Feature4>
-The sensual, curvaceous lines of its amphora bottle make this a legendary perfume.
-</Feature4>
-<ItemFABId>9</ItemFABId>
-<Model>DJA500</Model>
-<PrintQueueId>0</PrintQueueId>
-<ItemId>100021</ItemId>
-<ProductImageURL>
-https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=99003.png
-</ProductImageURL>
-<Quantity>1</Quantity>
-<Retail>104.0000</Retail>
-<Saving>71.0000</Saving>
-<StartDate>2017-09-20T00:00:00+01:00</StartDate>
-<StartDateText>2017-09-20T00:00:00</StartDateText>
-<StoreCode>900</StoreCode>
-<StoreId>12</StoreId>
-<StoreName>The Technology Store</StoreName>
-<ItemPriceId>3355</ItemPriceId>
-<Strapline1>SHIP EXCLUSIVE</Strapline1>
-<WasPrice1>175.0000</WasPrice1>
-</Record>
-<Record>
-<Brand>TW Steel</Brand>
-<ClassCode>_KK</ClassCode>
-<ClassId>-1</ClassId>
-<ClassName>Local (Keyed)</ClassName>
-<Code>99010</Code>
-<CultureCode>en-GB</CultureCode>
-<CurrencySymbol>£</CurrencySymbol>
-<CurrencySymbolMinor>p</CurrencySymbolMinor>
-<CurrencyType>GBP</CurrencyType>
-<Description>10 Year Anniversary Limited Edition Watch - 45mm</Description>
-<DisplayCode>99010</DisplayCode>
+<Description>Smart 4K Ultra HD 43" LED TV</Description>
+<Dimensions>(H) 63.3cm (W) 97.6cm (D) 20.7cm</Dimensions>
+<DisplayCode>20042</DisplayCode>
 <EndDate>9999-12-31T00:00:00+00:00</EndDate>
 <EndDateText>9999-12-31T00:00:00</EndDateText>
 <Feature1>
-Swiss Chronograph Automatic Valjoux 7750 movement (including certificate)
+43" (109.2cm visible screen size) Ultra High Definition Integrated Digital LED TV
 </Feature1>
-<Feature2>Genuine Crocodile leather strap with metal pieces</Feature2>
-<Feature3>Swiss Sapphire crystal</Feature3>
-<Feature4>10 ATM water resistant</Feature4>
-<ItemFABId>10</ItemFABId>
-<Model>TWAC10</Model>
+<Feature2>
+Includes both Freesat HD Freeview HD tuners (receives free digital satellite broadcastings)
+</Feature2>
+<Feature3>Access 4k content on Netflix & Amazon Prime</Feature3>
+<Feature4>HDR displays brighter colours and greater contrast</Feature4>
+<MiscText1>FV,FS,HDMI</MiscText1>
+<Model>43UH620V</Model>
 <PrintQueueId>0</PrintQueueId>
-<ItemId>100022</ItemId>
+<ItemId>100001</ItemId>
 <ProductImageURL>
-https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=99010.png
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20042.png
 </ProductImageURL>
 <Quantity>1</Quantity>
-<Retail>1495.0000</Retail>
-<Saving>180.0000</Saving>
-<StartDate>2017-10-02T00:00:00+01:00</StartDate>
-<StartDateText>2017-10-02T00:00:00</StartDateText>
+<Retail>449.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
 <StoreCode>900</StoreCode>
 <StoreId>12</StoreId>
 <StoreName>The Technology Store</StoreName>
-<ItemPriceId>3356</ItemPriceId>
-<Strapline1>HAPPY BIRTHDAY</Strapline1>
-<WasPrice1>1545.0000</WasPrice1>
-<WasPrice2>1595.0000</WasPrice2>
-<WasPrice3>1675.0000</WasPrice3>
+<ItemPriceId>2385</ItemPriceId>
+<Strapline1>BRAND NEW</Strapline1>
+</Record>
+<Record>
+<Brand>LG</Brand>
+<ClassCode>_UU</ClassCode>
+<ClassId>1</ClassId>
+<ClassName>Unclassified</ClassName>
+<CreditIndicator>0</CreditIndicator>
+<Code>20042</Code>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<Description>Smart 4K Ultra HD 43" LED TV</Description>
+<Dimensions>(H) 63.3cm (W) 97.6cm (D) 20.7cm</Dimensions>
+<DisplayCode>20042</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<EndDateText>9999-12-31T00:00:00</EndDateText>
+<Feature1>
+43" (109.2cm visible screen size) Ultra High Definition Integrated Digital LED TV
+</Feature1>
+<Feature2>
+Includes both Freesat HD Freeview HD tuners (receives free digital satellite broadcastings)
+</Feature2>
+<Feature3>Access 4k content on Netflix & Amazon Prime</Feature3>
+<Feature4>HDR displays brighter colours and greater contrast</Feature4>
+<MiscText1>FV,FS,HDMI</MiscText1>
+<Model>43UH620V</Model>
+<PrintQueueId>0</PrintQueueId>
+<ItemId>100001</ItemId>
+<ProductImageURL>
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20042.png
+</ProductImageURL>
+<Quantity>1</Quantity>
+<Retail>449.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
+<StoreCode>900</StoreCode>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<ItemPriceId>2385</ItemPriceId>
+<Strapline1>BRAND NEW</Strapline1>
+</Record>
+<Record>
+<Brand>LG</Brand>
+<ClassCode>_UU</ClassCode>
+<ClassId>1</ClassId>
+<ClassName>Unclassified</ClassName>
+<CreditIndicator>0</CreditIndicator>
+<Code>20042</Code>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<Description>Smart 4K Ultra HD 43" LED TV</Description>
+<Dimensions>(H) 63.3cm (W) 97.6cm (D) 20.7cm</Dimensions>
+<DisplayCode>20042</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<EndDateText>9999-12-31T00:00:00</EndDateText>
+<Feature1>
+43" (109.2cm visible screen size) Ultra High Definition Integrated Digital LED TV
+</Feature1>
+<Feature2>
+Includes both Freesat HD Freeview HD tuners (receives free digital satellite broadcastings)
+</Feature2>
+<Feature3>Access 4k content on Netflix & Amazon Prime</Feature3>
+<Feature4>HDR displays brighter colours and greater contrast</Feature4>
+<MiscText1>FV,FS,HDMI</MiscText1>
+<Model>43UH620V</Model>
+<PrintQueueId>0</PrintQueueId>
+<ItemId>100001</ItemId>
+<ProductImageURL>
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20042.png
+</ProductImageURL>
+<Quantity>1</Quantity>
+<Retail>449.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
+<StoreCode>900</StoreCode>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<ItemPriceId>2385</ItemPriceId>
+<Strapline1>BRAND NEW</Strapline1>
+</Record>
+<Record>
+<Brand>Sony</Brand>
+<ClassCode>_UU</ClassCode>
+<ClassId>1</ClassId>
+<ClassName>Unclassified</ClassName>
+<CreditIndicator>0</CreditIndicator>
+<Code>20107</Code>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<Description>Bravia 40" Smart LED TV</Description>
+<Dimensions>(H) 58.9cm (W) 92.4cm (D) 21.2cm</Dimensions>
+<DisplayCode>20107</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<EndDateText>9999-12-31T00:00:00</EndDateText>
+<Feature1>
+40" LED backlit screen with X-Reality PRO technology
+</Feature1>
+<Feature2>
+Digital tuner giving access to Freeview HD channels and other digital content
+</Feature2>
+<Feature3>Built-in WiFi to connect to the internet</Feature3>
+<Feature4>Two HDMI connections and two USB 2.0 ports</Feature4>
+<MiscText1>FV,1080,HDMI</MiscText1>
+<Model>KDL40WD653BU</Model>
+<PrintQueueId>0</PrintQueueId>
+<ItemId>100002</ItemId>
+<ProductImageURL>
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20107.png
+</ProductImageURL>
+<Quantity>1</Quantity>
+<Retail>499.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
+<StoreCode>900</StoreCode>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<ItemPriceId>2386</ItemPriceId>
+<Strapline1>GREAT VALUE</Strapline1>
+</Record>
+<Record>
+<Brand>Sony</Brand>
+<ClassCode>_UU</ClassCode>
+<ClassId>1</ClassId>
+<ClassName>Unclassified</ClassName>
+<CreditIndicator>0</CreditIndicator>
+<Code>20107</Code>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<Description>Bravia 40" Smart LED TV</Description>
+<Dimensions>(H) 58.9cm (W) 92.4cm (D) 21.2cm</Dimensions>
+<DisplayCode>20107</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<EndDateText>9999-12-31T00:00:00</EndDateText>
+<Feature1>
+40" LED backlit screen with X-Reality PRO technology
+</Feature1>
+<Feature2>
+Digital tuner giving access to Freeview HD channels and other digital content
+</Feature2>
+<Feature3>Built-in WiFi to connect to the internet</Feature3>
+<Feature4>Two HDMI connections and two USB 2.0 ports</Feature4>
+<MiscText1>FV,1080,HDMI</MiscText1>
+<Model>KDL40WD653BU</Model>
+<PrintQueueId>0</PrintQueueId>
+<ItemId>100002</ItemId>
+<ProductImageURL>
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20107.png
+</ProductImageURL>
+<Quantity>1</Quantity>
+<Retail>499.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
+<StoreCode>900</StoreCode>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<ItemPriceId>2386</ItemPriceId>
+<Strapline1>GREAT VALUE</Strapline1>
+</Record>
+<Record>
+<Brand>Sony</Brand>
+<ClassCode>_UU</ClassCode>
+<ClassId>1</ClassId>
+<ClassName>Unclassified</ClassName>
+<CreditIndicator>0</CreditIndicator>
+<Code>20107</Code>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<Description>Bravia 40" Smart LED TV</Description>
+<Dimensions>(H) 58.9cm (W) 92.4cm (D) 21.2cm</Dimensions>
+<DisplayCode>20107</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<EndDateText>9999-12-31T00:00:00</EndDateText>
+<Feature1>
+40" LED backlit screen with X-Reality PRO technology
+</Feature1>
+<Feature2>
+Digital tuner giving access to Freeview HD channels and other digital content
+</Feature2>
+<Feature3>Built-in WiFi to connect to the internet</Feature3>
+<Feature4>Two HDMI connections and two USB 2.0 ports</Feature4>
+<MiscText1>FV,1080,HDMI</MiscText1>
+<Model>KDL40WD653BU</Model>
+<PrintQueueId>0</PrintQueueId>
+<ItemId>100002</ItemId>
+<ProductImageURL>
+https://demo.nettickit.com/publisher/graphicdownload.aspx?filename=20107.png
+</ProductImageURL>
+<Quantity>1</Quantity>
+<Retail>499.9900</Retail>
+<StartDate>2017-10-05T00:00:00+01:00</StartDate>
+<StartDateText>2017-10-05T00:00:00</StartDateText>
+<StoreCode>900</StoreCode>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<ItemPriceId>2386</ItemPriceId>
+<Strapline1>GREAT VALUE</Strapline1>
 </Record>
 </Data>
 <Error/>

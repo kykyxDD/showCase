@@ -9,7 +9,7 @@ function briefBanner(params){
 	this.full_screen = true;
 	this.input_file = false
 
-	this.create_input = true;
+	this.create_input = false;
 
 	this.init = function(){
 
@@ -66,7 +66,6 @@ function briefBanner(params){
 		this.updateXML()
 	}
 	this.updateXML = function(){
-		// console.log('updateXML')
 		this.banner.classList.add('load');
 		this.loadXML(this.showBanner.bind(this))
 	}
@@ -76,8 +75,10 @@ function briefBanner(params){
 		this.banner.classList.add('play');
 		var data = this.list_data[this.index_temt];
 
+
+
 		this.startBanner(data)
-	}
+	};
 
 	this.loadXML = function(callback){
 
@@ -88,12 +89,32 @@ function briefBanner(params){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
-				self.runData(this.responseXML)
-				callback()				
+				var parser = new DOMParser();
+				var text = self.parseXML(this.responseText);
+				var xmlDoc = parser.parseFromString(text,"text/xml");
+				self.runData(xmlDoc);
+				callback();
 			}
 		};
 		xhttp.open("GET", filename, true);
 		xhttp.send();
+	}
+	this.parseXML = function(text){
+		var elem = createElem('div')
+		elem.innerHTML = text;
+		var xml = elem.children[0];
+		var data = xml.getElementsByTagName('data')[0];
+		for(var i = 0; i < data.children.length; i++){
+			this.checkChild(data.children[i]);
+		}
+		return elem.innerHTML
+
+	}
+	this.checkChild = function(elem){
+		for(var i = 0; i < elem.children.length; i++){
+			var text = elem.children[i].innerHTML;
+			elem.children[i].innerHTML = escape(text);
+		}
 	}
 
 	this.createBanner = function(){
@@ -119,25 +140,22 @@ function briefBanner(params){
 		this.arr_star = []
 
 		this.radius = itm_center.offsetWidth;
-		// console.log('radius',this.radius)
 		for(var i = 0;i<10;i++){
 			this.createStar(cont_star,i)
-
-			//star.style.left = Math.floor(Math.random()*50+50) + "px";
 		}
-		var cont_text = createElem('div','cont_text', itm_center)
+		var cont_text = createElem('div','cont_text', itm_center);
 
-		var center_text1 = createElem('div', 'text1', cont_text)
+		var center_text1 = createElem('div', 'text1', cont_text);
 		center_text1.innerHTML = 'save';
-		var center_price = createElem('div', 'price', cont_text)
+		var center_price = createElem('div', 'price', cont_text);
 		var line_bottom = createElem('div', 'line_bottom', cont_view);
 		var cont_line_bottom = createElem('div', 'cont_line_bottom', line_bottom);
 		var cont_text = createElem('div', 'cont_text', cont_line_bottom);
-		var text_1 = createElem('div', 'text text_1', cont_text)
-		var text_2 = createElem('div', 'text text_2', cont_text)
+		var text_1 = createElem('div', 'text text_1', cont_text);
+		var text_2 = createElem('div', 'text text_2', cont_text);
 
 
-		var desc = createElem('div', 'desc', cont_view)
+		var desc = createElem('div', 'desc', cont_view);
 
 
 		var cont_was = createElem('div', 'was', blue_line);
@@ -149,7 +167,7 @@ function briefBanner(params){
 		text_now.innerHTML = 'now only';
 		var text_price = createElem('div', 'text_price', blue_line);
 
-		var brand = createElem('div', 'info_brand', blue_line)
+		var brand = createElem('div', 'info_brand', blue_line);
 
 
 		this.elem_banner = {
@@ -161,7 +179,9 @@ function briefBanner(params){
 				text_1,text_2
 			],
 			text_now: text_now,
-			red_line_top: text_top,
+
+			red_line_top: line_top,
+			text_top: text_top,
 			blue_line_top: blue_line,
 			text_price: text_price,
 			brand: brand,
@@ -225,6 +245,11 @@ function briefBanner(params){
 	}
 	this.switchData = function(){
 
+
+		if(this.timeoutSwitch){
+			clearTimeout(this.timeoutSwitch)
+		}
+
 		if(this.index_temt+1 < this.list_data.length){
 			var next_index = (this.index_temt+1)%this.list_data.length;
 
@@ -240,16 +265,23 @@ function briefBanner(params){
 
 	this.runData = function(data){
 		var xml = data.children[0];
+		this.index_temt = 0
 
 		this.json_xml = {};
 		this.list_data = []
+		if(this.timeoutSwitch){
+			clearTimeout(this.timeoutSwitch)
+		}
+		if(this.timeout_text){
+			clearTimeout(this.timeout_text)
+		}
 
 		for(var i = 0; i < xml.children.length; i++){
 			var child = xml.children[i]
 			var key = child.tagName.toLocaleLowerCase()
 			var elem
 			if(!child.children.length) {
-				elem = child.innerHTML
+				elem = unescape(child.innerHTML)
 			} else {
 				elem = child.children
 			}
@@ -270,18 +302,19 @@ function briefBanner(params){
 						var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
 
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key][index-1] = itm.children[j].innerHTML
+						parse_data[key][index-1] = unescape(itm.children[j].innerHTML)
 					} else if(key.indexOf('wasprice') >= 0){
 						key = 'wasprice';
 
 						var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
 
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key][index-1] = itm.children[j].innerHTML
+						parse_data[key][index-1] = unescape(itm.children[j].innerHTML)
 					} else {
-						parse_data[key] = itm.children[j].innerHTML	
+						parse_data[key] = unescape(itm.children[j].innerHTML)
 					}
 				}
+
 
 				this.list_data.push(parse_data)
 			}
@@ -321,8 +354,24 @@ function briefBanner(params){
 
 		return diff > 0 ? num.toFixed(2) : num;
 	}
+	this.remPrevLen = function(){
+		var elem = this.elem_banner.center_price;
+
+		for(var i = 0; i < elem.classList.length; i++){
+			if(elem.classList[i].indexOf('len_')>=0){
+				elem.classList.remove(elem.classList[i])
+			}
+		}
+	}
 
 	this.startBanner = function(data){
+
+		this.elem_banner.text_price.classList.remove('hide');
+		this.elem_banner.center.classList.remove('hide');
+		this.elem_banner.desc.classList.remove('hide');
+		this.elem_banner.red_line_top.classList.remove('hide');
+
+		this.remPrevLen()
 
 		var prev_index = this.index_temt-1;
 		var class_name = 'banner_';
@@ -347,12 +396,47 @@ function briefBanner(params){
 
 		var retail_diff = this.getPrice(data.retail); 
 
-		this.elem_banner.text_price.innerHTML = data.currencysymbol + retail_diff
+		if(retail_diff >= 0){
+			this.elem_banner.text_price.innerHTML = data.currencysymbol + (retail_diff)
+		} else {
+			this.elem_banner.text_price.classList.add('hide');
+		}
 
-		this.elem_banner.brand.innerHTML = [data.brand,data.model].join(' - ')
-		this.elem_banner.center_price.innerHTML = data.currencysymbol + saving
-		this.elem_banner.desc.innerHTML = data.description
-		this.elem_banner.red_line_top.innerHTML = data.strapline1;
+		
+		var text = '';
+
+		if(data.brand) {
+			text += data.brand
+		}
+		if(data.brand && data.model){
+			text += ' - ';
+		}
+		if(data.model){
+			text += data.model
+		}
+
+		this.elem_banner.brand.innerHTML = text
+
+		if(saving >= 0){
+			var text = Math.ceil(saving)
+			this.elem_banner.center_price.innerHTML = data.currencysymbol + text
+			this.elem_banner.center_price.classList.add('len_'+((''+text).length))
+		} else {
+			this.elem_banner.center.classList.add('hide');
+		}
+		
+		if(data.description){
+			this.elem_banner.desc.innerHTML = data.description;
+		} else {
+			this.elem_banner.desc.classList.add('hide');
+		}
+		
+
+		if(data.strapline1) {
+			this.elem_banner.text_top.innerHTML = data.strapline1;
+		} else {
+			this.elem_banner.red_line_top.classList.add('hide');
+		}
 
 		if(!data.wasprice ||(data.wasprice && !data.wasprice.length)){
 			this.removeWasprice(data)
@@ -360,7 +444,7 @@ function briefBanner(params){
 			this.addWasprice(data)
 		}
 		this.clearText();
-		var diff = this.timeoutClearText ? 0 : 1800;
+		var diff = 1800
 
 		this.timeoutClearText = setTimeout(function(){
 			self.animationText(0)
@@ -373,10 +457,14 @@ function briefBanner(params){
 		}
 
 		var img = new Image();
-		img.src = data.productimageurl;
-		img.onload = function(){
-			self.elem_banner.img.src = this.src//.style.backgroundImage = 'url('+this.src+')';
-			self.elem_banner.cont_img.classList.add('show');
+		if(!data.productimageurl){
+			console.log('productimageurl')
+		} else {
+			img.src = data.productimageurl;
+			img.onload = function(){
+				self.elem_banner.img.src = this.src//.style.backgroundImage = 'url('+this.src+')';
+				self.elem_banner.cont_img.classList.add('show');
+			}
 		}
 	}
 
@@ -402,6 +490,15 @@ function briefBanner(params){
 			var elem = createElem('div', 'itm_waspice', list_was);
 			var num = this.getPrice(data.wasprice[i]);
 			elem.innerHTML = data.currencysymbol + num
+
+			var size = {
+				w: elem.offsetWidth,
+				h: elem.offsetHeight-10
+			}
+			var angle = -size.h/size.w;
+			var deg = (Math.sin(angle)/Math.PI)*180;
+			var line = createElem('div', 'line', elem)
+			line.style.transform = 'rotate('+Math.floor(deg)+'deg)'
 		}
 	}
 	this.removeWasprice = function(){
@@ -413,6 +510,7 @@ function briefBanner(params){
 	}
 
 	this.animationText = function(index){
+		// console.log('animationText',index)
 		var arr_elem = this.elem_banner.red_line_bottom;
 		var arr_text = this.arr_text
 		var prev_itm = Math.abs((index-1)%2);
@@ -429,11 +527,6 @@ function briefBanner(params){
 			arr_elem[index_itm].innerHTML = this.arr_text[index];
 			arr_elem[index_itm].classList.remove('hide');
 			arr_elem[index_itm].classList.add('show');
-		}
-
-		if(index+1 < this.arr_text.length){
-			var next_index = (index+1)%this.arr_text.length
-			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);
 		} else {
 			if(this.full_screen){
 				this.banner.classList.remove('show')
@@ -441,6 +534,11 @@ function briefBanner(params){
 					self.switchData();
 				}, 2000);
 			}
+		}
+
+		if(index <= this.arr_text.length){
+			var next_index = (index+1)
+			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);
 		}
 	}
 
