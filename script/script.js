@@ -75,8 +75,6 @@ function briefBanner(params){
 		this.banner.classList.add('play');
 		var data = this.list_data[this.index_temt];
 
-
-
 		this.startBanner(data)
 	};
 
@@ -105,7 +103,8 @@ function briefBanner(params){
 		var xml = elem.children[0];
 		var data = xml.getElementsByTagName('data')[0];
 		for(var i = 0; i < data.children.length; i++){
-			this.checkChild(data.children[i]);
+			// console.log(data.children[i])
+			data.children[i] = this.checkChild(data.children[i]);
 		}
 		return elem.innerHTML
 
@@ -113,8 +112,26 @@ function briefBanner(params){
 	this.checkChild = function(elem){
 		for(var i = 0; i < elem.children.length; i++){
 			var text = elem.children[i].innerHTML;
-			elem.children[i].innerHTML = escape(text);
+			if(!elem.children[i].children || (elem.children[i].children && !elem.children[i].children.length)) {
+				elem.children[i].innerHTML = escape(text);	
+			} else {
+				var child = elem.children[i];
+				this.getChild(child, elem)
+				
+				i--
+			}			
 		}
+		return elem.innerHTML
+	}
+	this.getChild = function(child, elem){
+		while(child.children.length){
+			if(!child.children[0].length){
+				elem.appendChild(child.children[0]);	
+			} else {
+				this.getChild(child.children[0], elem)
+			}			
+		}
+		elem.removeChild(child);
 	}
 
 	this.createBanner = function(){
@@ -124,7 +141,6 @@ function briefBanner(params){
 		img.setAttribute('width', 'auto');
 		img.setAttribute('height', '100%');
 
-		
 		var line_top = createElem('div', 'line_top', cont_view);
 		var cont_line_top = createElem('div', 'cont_line_top', line_top);
 
@@ -198,11 +214,12 @@ function briefBanner(params){
 		star.style.left = Math.floor(coor.start.x) + 'px';
 		star.style.top = Math.floor(coor.start.y) + 'px';
 
+
 		var anim = CSSAnimations.create('star_'+id, {
 			'0%': {
 				'left': coor.start.x + 'px',
 				'top': coor.start.y + 'px'
-			},// { 'background-color': 'red' },
+			},
 			'100%': {
 				'left': coor.finish.x + 'px',
 				'top': coor.finish.y + 'px'
@@ -215,6 +232,41 @@ function briefBanner(params){
 		star.style.animationDelay = d+'s';
 
 		this.arr_star.push(star);
+	}
+
+	function createKeyframes(coor, name){
+		var animation = false,
+			animationstring = 'animation',
+			keyframeprefix = '',
+			domPrefixes = 'Webkit Moz O ms Khtml'.split(' '),
+			pfx  = '',
+			elm = document.createElement('div');
+
+		if( elm.style.animationName !== undefined ) { animation = true; }    
+
+		if( animation === false ) {
+			for( var i = 0; i < domPrefixes.length; i++ ) {
+				if( elm.style[ domPrefixes[i] + 'AnimationName' ] !== undefined ) {
+					pfx = domPrefixes[ i ];
+					animationstring = pfx + 'Animation';
+					keyframeprefix = '-' + pfx.toLowerCase() + '-';
+					animation = true;
+					break;
+				}
+			}
+		}
+		var keyframes = '@' + keyframeprefix + 'keyframes '+name+' { '+
+            '0% { left: ' +  coor.start.x + 'px; top: ' + coor.start.y + 'px;}' + //+ keyframeprefix + 'transform:rotate( 0deg ) }'+
+            '100% { left: ' + coor.finish.x + 'px; top: ' + coor.finish.y + 'px;}'+
+        '}';
+
+		if( document.styleSheets && document.styleSheets.length ) {
+			document.styleSheets[0].insertRule( keyframes, 0 );
+		} else {
+			var s = document.createElement( 'style' );
+			s.innerHTML = keyframes;
+			document.getElementsByTagName( 'head' )[ 0 ].appendChild( s );
+		}
 	}
 	this.getCoorStar = function(){
 		var angle = Math.random()*Math.PI;
@@ -232,13 +284,14 @@ function briefBanner(params){
 		var npx = x_1 + dirvx*dist;
 		var npy = y_1 - dirvy*dist;
 
+
 		return {
 			start: {
-				x: Math.floor(x_1),	
+				x: Math.floor(x_1),
 				y: Math.floor(y_1)
 			},
 			finish: {
-				x: Math.floor(npx),	
+				x: Math.floor(npx),
 				y: Math.floor(npy)
 			}
 		}
@@ -296,22 +349,23 @@ function briefBanner(params){
 				if(!itm.children.length) continue
 				for(var j = 0; j < itm.children.length; j++){
 					var key = itm.children[j].tagName.toLocaleLowerCase();
+					var child = itm.children[j]
 					if(key.indexOf('feature')>=0){
 						key = 'feature';
 
-						var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
+						// var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
 
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key][index-1] = unescape(itm.children[j].innerHTML)
+						parse_data[key].push(unescape(child.innerHTML))
 					} else if(key.indexOf('wasprice') >= 0){
 						key = 'wasprice';
 
-						var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
+						// var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
 
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key][index-1] = unescape(itm.children[j].innerHTML)
+						parse_data[key].push(unescape(child.innerHTML))
 					} else {
-						parse_data[key] = unescape(itm.children[j].innerHTML)
+						parse_data[key] = unescape(child.innerHTML)
 					}
 				}
 
@@ -390,7 +444,7 @@ function briefBanner(params){
 		}
 		self.elem_banner.cont_img.classList.remove('show');
 		self.elem_banner.img.src = '';
-		this.banner.classList.add('show');
+		
 
 		var saving = +data.saving;
 
@@ -416,11 +470,13 @@ function briefBanner(params){
 		}
 
 		this.elem_banner.brand.innerHTML = text
+		var len = 0
 
 		if(saving >= 0){
-			var text = Math.ceil(saving)
+			var text = ''+this.getPrice(saving);//Math.ceil(saving)
+			len = text.indexOf('.') >= 0 ?  text.length-1 : text.length;
 			this.elem_banner.center_price.innerHTML = data.currencysymbol + text
-			this.elem_banner.center_price.classList.add('len_'+((''+text).length))
+			this.elem_banner.center_price.classList.add('len_'+len)
 		} else {
 			this.elem_banner.center.classList.add('hide');
 		}
@@ -444,11 +500,12 @@ function briefBanner(params){
 			this.addWasprice(data)
 		}
 		this.clearText();
-		var diff = 1800
+		var diff = 1800;
 
 		this.timeoutClearText = setTimeout(function(){
 			self.animationText(0)
 		}, diff);
+
 
 		this.arr_text = data['feature'];
 
@@ -466,6 +523,7 @@ function briefBanner(params){
 				self.elem_banner.cont_img.classList.add('show');
 			}
 		}
+		this.banner.classList.add('show');
 	}
 
 	this.clearText = function(){
@@ -493,12 +551,14 @@ function briefBanner(params){
 
 			var size = {
 				w: elem.offsetWidth,
-				h: elem.offsetHeight-10
+				h: elem.offsetHeight-5
 			}
 			var angle = -size.h/size.w;
 			var deg = (Math.sin(angle)/Math.PI)*180;
+			// console.log()
 			var line = createElem('div', 'line', elem)
-			line.style.transform = 'rotate('+Math.floor(deg)+'deg)'
+			line.style.transform = 'rotate('+Math.floor(deg)+'deg)';
+
 		}
 	}
 	this.removeWasprice = function(){
@@ -538,7 +598,7 @@ function briefBanner(params){
 
 		if(index <= this.arr_text.length){
 			var next_index = (index+1)
-			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);
+			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);	
 		}
 	}
 
