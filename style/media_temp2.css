@@ -1,0 +1,193 @@
+@media screen and (max-width: 1240px), screen and (max-height: 768px) {
+	.banner.temp2 .view .cont_img {
+		right: 25%;
+	}
+
+	.banner.temp2 .view .line_top .text_top {
+		text-indent: 50px;
+		font-size: 35px;
+		line-height: 35px;
+
+		padding-top: 0px;
+	}
+	.banner.temp2 .view .desc {
+		top: 15%;
+		font-size: 65px;
+		line-height: 65px;
+		left: 50px;
+	}
+	.banner .view .desc .model {
+		bottom: -45px;
+		font-size: 30px;
+		line-height: 30px;
+	}
+	.banner .view .line_bottom .feature {
+		font-size: 18px;
+		padding: 10px 0;
+		line-height: 20px;
+
+	}
+
+	.banner.temp2 .view .blue_line .was {
+		font-size: 22px;
+		line-height: 20px;
+	}
+	.banner.temp2 .view .line_bottom .text_0 {
+		font-size: 20px;
+		line-height: 20px;
+		top: -35px;
+	}
+	.banner.temp2 .view .line_bottom {
+		padding: 7px 20px;
+		bottom: 25px;
+	}
+	.banner.temp2.show .view .line_bottom {
+		right: 30px;
+	}
+	.banner.temp2 .view .blue_line .text_now {
+		font-size: 50px;
+		line-height: 50px;
+	}
+	.banner.temp2 .view .blue_line .text_price {
+		line-height: 85px;
+		font-size: 100px;
+	}
+	.banner .view .blue_line .quote {
+		display: none;
+		opacity: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 20px;
+		line-height: 25px;
+		max-width: 300px;
+	}
+}
+@media screen and (max-width: 800px), screen and (max-height: 480px)  { 
+	.banner.temp2 .view .line_top .text_top {
+		text-indent: 30px;
+		font-size: 30px;
+		line-height: 30px;
+		padding-top: 0px;
+	}
+
+	.banner.temp2 .view .desc {
+		font-size: 50px;
+		line-height: 50px;
+		left: 30px;
+	}
+	.banner .view .desc .model {
+		bottom: -30px;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.banner.temp2 .view .blue_line {
+
+    left: 30px;
+    padding: 20px 0;
+}
+.banner.temp2 .view .blue_line .text_now {
+    font-size: 30px;
+    line-height: 30px;
+}
+.banner.temp2 .view .blue_line .cont_blue_line > div {
+    padding: 0 15px;
+}
+.banner.temp2 .view .blue_line .text_price {
+    line-height: 70px;
+    font-size: 70px;
+}
+.banner.temp2 .view .blue_line .was {
+    font-size: 18px;
+    line-height: 18px;
+}
+.banner .view .blue_line .quote {
+    display: none;
+    opacity: 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 18px;
+    max-width: 215px;
+}
+
+.banner .view .line_bottom .feature {
+    font-size: 14px;
+    padding: 5px 0;
+    line-height: 16px;
+}
+.banner.temp2 .view .line_bottom .text_0 {
+    font-size: 16px;
+    line-height: 16px;
+    top: -25px;
+}
+}
+@media screen and (max-width: 600px), screen and (max-height: 400px) {
+	.banner.temp2 .view .line_top .text_top {
+		text-indent: 20px;
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.banner.temp2 .view .desc {
+		font-size: 30px;
+		line-height: 30px;
+		left: 20px;
+	}
+	.banner .view .desc .model {
+		bottom: -25px;
+		font-size: 15px;
+		line-height: 15px;
+	}
+	.banner.temp2.show .view .line_bottom {
+		right: 10px;
+		padding: 5px 10px;
+		bottom: 15px;
+	}
+	.banner .view .line_bottom .feature {
+		font-size: 11px;
+		padding: 5px 0;
+		line-height: 12px;
+	}
+
+	.banner.temp2 .view .line_bottom{
+		background-color: rgba(0,0,0,0.7);
+	}
+	.banner.temp2 .view .line_bottom .text_0 {
+		font-size: 11px;
+		line-height: 11px;
+		top: -20px;
+	}
+	.banner.temp2 .view .blue_line {
+		left: 20px;
+		padding: 10px 0;
+	}
+	.banner.temp2 .view .blue_line .cont_blue_line > div {
+		padding: 0 10px;
+	}
+	.banner.temp2 .view .blue_line .text_now {
+		font-size: 20px;
+		line-height: 20px;
+	}
+	.banner.temp2 .view .blue_line .text_price {
+		line-height: 50px;
+		font-size: 50px;
+	}
+	.banner.temp2 .view .blue_line .was {
+		font-size: 14px;
+		line-height: 14px;
+	}
+	.banner .view .blue_line .quote {
+		display: none;
+		opacity: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 12px;
+		max-width: 160px;
+	}
+}
+@media screen and (min-height: 1000px)  {
+
+}
+@media screen and (min-width: 2000px){
+
+}

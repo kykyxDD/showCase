@@ -1,13 +1,14 @@
 function briefBanner(params){
 	var parent
 	var self = this
-	var view, cont_view
+	var view, cont_view, cont_bg
 	this.index_temt = 0;
 	this.list_data = [];
 	this.params = params
 
 	this.full_screen = true;
-	this.input_file = false
+	this.input_file = false;
+	this.temp2_time = 5000;
 
 	this.create_input = false;
 
@@ -41,13 +42,14 @@ function briefBanner(params){
 		btn_start.innerHTML = 'start';
 
 		btn_start.addEventListener('click', function(e){
-			e.preventDefault()
+			e.preventDefault();
 			self.fullScreen();
 			self.loadFile()
 		});
 
 		view = createElem('div', 'view', parent)
 		cont_view = createElem('div', 'cont_view', view)
+		var cont_bg = createElem('div', 'cont_bg', cont_view)
 
 
 		var url = this.params && this.params.src ? this.params.src : './data/data.xml';
@@ -140,6 +142,7 @@ function briefBanner(params){
 		var img = createElem('img', '', cont_img)
 		img.setAttribute('width', 'auto');
 		img.setAttribute('height', '100%');
+		img.setAttribute('align', 'top');
 
 		var line_top = createElem('div', 'line_top', cont_view);
 		var cont_line_top = createElem('div', 'cont_line_top', line_top);
@@ -150,6 +153,7 @@ function briefBanner(params){
 
 
 		var blue_line = createElem('div', 'blue_line', cont_view);
+		var cont_blue_line = createElem('div', 'cont_blue_line', blue_line);
 		var itm_center = createElem('div', 'circle', cont_view);
 		var cont_star = createElem('div', 'cont_star', itm_center);
 
@@ -159,6 +163,8 @@ function briefBanner(params){
 		for(var i = 0;i<10;i++){
 			this.createStar(cont_star,i)
 		}
+
+		// this.createBG()
 		var cont_text = createElem('div','cont_text', itm_center);
 
 		var center_text1 = createElem('div', 'text1', cont_text);
@@ -167,43 +173,54 @@ function briefBanner(params){
 		var line_bottom = createElem('div', 'line_bottom', cont_view);
 		var cont_line_bottom = createElem('div', 'cont_line_bottom', line_bottom);
 		var cont_text = createElem('div', 'cont_text', cont_line_bottom);
+		var text_0 = createElem('div', 'text text_0', cont_text);
+		text_0.innerHTML = 'Packed with features:';
 		var text_1 = createElem('div', 'text text_1', cont_text);
 		var text_2 = createElem('div', 'text text_2', cont_text);
 
 
 		var desc = createElem('div', 'desc', cont_view);
+		var cont_desc = createElem('div', 'text_desc', desc);
+		var desc_model = createElem('div', 'model', desc);
 
-
-		var cont_was = createElem('div', 'was', blue_line);
+		var cont_was = createElem('div', 'was', cont_blue_line);
 		var name_was = createElem('div', 'name', cont_was);
 		name_was.innerHTML = 'WAS';
 		var list_was = createElem('div', 'list_was', cont_was);
 
-		var text_now = createElem('div', 'text_now', blue_line);
+		var text_now = createElem('div', 'text_now', cont_blue_line);
 		text_now.innerHTML = 'now only';
-		var text_price = createElem('div', 'text_price', blue_line);
+		var text_price = createElem('div', 'text_price', cont_blue_line);
 
-		var brand = createElem('div', 'info_brand', blue_line);
+		var brand = createElem('div', 'info_brand', cont_blue_line);
+
+
+		var quote = createElem('div', 'quote', cont_blue_line);
+		quote.innerHTML = 'in store only - when they\'re gone they\'re gone!'
 
 
 		this.elem_banner = {
 			center: itm_center,
-			desc: desc,
+			desc: cont_desc,
+			desc_model: desc_model,
 			center_text1: center_text1,
 			center_price: center_price,
 			red_line_bottom: [
 				text_1,text_2
 			],
+			line_bottom: line_bottom,
 			text_now: text_now,
 
 			red_line_top: line_top,
 			text_top: text_top,
-			blue_line_top: blue_line,
+			blue_line_top: cont_blue_line,
 			text_price: text_price,
 			brand: brand,
 			cont_img: cont_img,
 			img: img,
-			list_was: list_was
+			cont_was: cont_was,
+			list_was: list_was,
+			quote: quote
 		}
 	};
 
@@ -232,6 +249,28 @@ function briefBanner(params){
 		star.style.animationDelay = d+'s';
 
 		this.arr_star.push(star);
+	}
+	this.createBG = function(){
+		var size = window.screen;
+
+		var s = 1940/8000;
+		var s_1 = size.height*0.6;
+		var	s_2 = s_1/782;
+		var w =  1940
+
+		var m_0 = (965)*s_2;
+		var m_1 = (8000)*s_2 - m_0;
+		// console.log(m_0, m_1)
+
+		var anim = CSSAnimations.create('anim_bg', {
+			'0%': {
+				'margin-left': '0px'//(-m_0)+'px',
+			},
+			'100%': {
+				'margin-left': (-m_1)+'px'
+			}
+		});
+
 	}
 
 	function createKeyframes(coor, name){
@@ -369,7 +408,6 @@ function briefBanner(params){
 					}
 				}
 
-
 				this.list_data.push(parse_data)
 			}
 		}
@@ -386,17 +424,24 @@ function briefBanner(params){
 		for(var d = 0; d < data.length; d++){
 			var itm = data[d];
 
-			if(itm.wasprice && itm.wasprice.length > 1 ){
-				itm.wasprice = itm.wasprice.sort(function(old, next){
-					if(+old > +next ){
-						return -1 
-					} else if(+old < +next ){
-						return 1 
-					} else {
-						return 0
-					}
-				});
+			if(itm.wasprice && itm.wasprice.length){
+				if(itm.wasprice.length > 1 ){
+					itm.wasprice = itm.wasprice.sort(function(old, next){
+						if(+old > +next ){
+							return -1 
+						} else if(+old < +next ){
+							return 1 
+						} else {
+							return 0
+						}
+					});
+				}
+				if(!itm.saving) {
+					var num = (+itm.wasprice[0]) - (+itm.retail)
+					itm.saving = num
+				}
 			}
+
 		}
 
 		return data
@@ -417,13 +462,33 @@ function briefBanner(params){
 			}
 		}
 	}
+	this.chechTemp2 = function(data){
+		return data.devicetypetheme && data.devicetypetheme.toLowerCase() == 'electrical'
+	}
 
 	this.startBanner = function(data){
 
-		this.elem_banner.text_price.classList.remove('hide');
-		this.elem_banner.center.classList.remove('hide');
-		this.elem_banner.desc.classList.remove('hide');
-		this.elem_banner.red_line_top.classList.remove('hide');
+		var elems = this.elem_banner
+		this.clearText();
+		elems.text_price.classList.remove('hide');
+		elems.center.classList.remove('hide');
+		elems.desc.classList.remove('hide');
+		elems.red_line_top.classList.remove('hide');
+		
+
+		//if(data.classid == 2 || data.brand.toLowerCase() == 'sony'){
+		if(this.chechTemp2(data)){
+			this.temp2 = true
+		} else {
+			this.temp2 = false
+		}
+
+
+		if(this.temp2){
+			this.banner.classList.add('temp2');
+		} else {
+			this.banner.classList.remove('temp2');
+		}
 
 		this.remPrevLen()
 
@@ -442,18 +507,17 @@ function briefBanner(params){
 		if(this.timeoutSwitch){
 			clearTimeout(this.timeoutSwitch)
 		}
-		self.elem_banner.cont_img.classList.remove('show');
-		self.elem_banner.img.src = '';
-		
+		elems.cont_img.classList.remove('show');
+		elems.img.src = '';
 
 		var saving = +data.saving;
 
 		var retail_diff = this.getPrice(data.retail); 
 
 		if(retail_diff >= 0){
-			this.elem_banner.text_price.innerHTML = data.currencysymbol + (retail_diff)
+			elems.text_price.innerHTML = data.currencysymbol + (retail_diff)
 		} else {
-			this.elem_banner.text_price.classList.add('hide');
+			elems.text_price.classList.add('hide');
 		}
 
 		
@@ -467,31 +531,38 @@ function briefBanner(params){
 		}
 		if(data.model){
 			text += data.model
+			elems.desc_model.innerHTML = 'Model: '+data.model
 		}
 
-		this.elem_banner.brand.innerHTML = text
+		elems.brand.innerHTML = text
 		var len = 0
 
 		if(saving >= 0){
 			var text = ''+this.getPrice(saving);//Math.ceil(saving)
 			len = text.indexOf('.') >= 0 ?  text.length-1 : text.length;
-			this.elem_banner.center_price.innerHTML = data.currencysymbol + text
-			this.elem_banner.center_price.classList.add('len_'+len)
+			elems.center_price.innerHTML = data.currencysymbol + text
+			elems.center_price.classList.add('len_'+len)
 		} else {
-			this.elem_banner.center.classList.add('hide');
+			elems.center.classList.add('hide');
 		}
 		
 		if(data.description){
-			this.elem_banner.desc.innerHTML = data.description;
+			elems.desc.innerHTML = data.description;
 		} else {
-			this.elem_banner.desc.classList.add('hide');
+			elems.desc.classList.add('hide');
 		}
 		
 
-		if(data.strapline1) {
-			this.elem_banner.text_top.innerHTML = data.strapline1;
+		if((!this.temp2 && data.strapline1) || (this.temp2 && data.brand)) {
+			elems.text_top.innerHTML = !this.temp2 ? data.strapline1 : data.brand;
 		} else {
-			this.elem_banner.red_line_top.classList.add('hide');
+			elems.red_line_top.classList.add('hide');
+		}
+
+		if(!this.temp2){
+			elems.blue_line_top.insertBefore(elems.cont_was, elems.text_now)
+		} else {
+			elems.blue_line_top.insertBefore(elems.cont_was, elems.quote)
 		}
 
 		if(!data.wasprice ||(data.wasprice && !data.wasprice.length)){
@@ -499,31 +570,87 @@ function briefBanner(params){
 		} else {
 			this.addWasprice(data)
 		}
-		this.clearText();
+
+
+		
 		var diff = 1800;
-
-		this.timeoutClearText = setTimeout(function(){
-			self.animationText(0)
-		}, diff);
-
-
 		this.arr_text = data['feature'];
+
+		if(!this.temp2){
+			var arr_elem = self.elem_banner.red_line_bottom;
+			arr_elem[0].classList.remove('show');
+			this.timeoutClearText = setTimeout(function(){
+				self.animationText(0)
+			}, diff);
+			console.log('diff',diff)
+		} else {
+			this.elem_banner.line_bottom.classList.add('hide')			
+		}
+
 
 		if(this.timeout_text){
 			clearTimeout(this.timeout_text);
 		}
 
+
 		var img = new Image();
-		if(!data.productimageurl){
-			console.log('productimageurl')
+		if(!data.productimageurl && !data.codegraphicfilename){
+			if(this.temp2){
+				setTimeout(function(){
+					self.nextSlider();
+				}, this.temp2_time)
+			}
 		} else {
-			img.src = data.productimageurl;
+			var arr_elem = self.elem_banner.red_line_bottom;
+			arr_elem[0].classList.add('show');
+			img.src = data.codegraphicfilename ? data.codegraphicfilename :  data.productimageurl;
 			img.onload = function(){
-				self.elem_banner.img.src = this.src//.style.backgroundImage = 'url('+this.src+')';
+				self.elem_banner.img.src = this.src; //.style.backgroundImage = 'url('+this.src+')';
 				self.elem_banner.cont_img.classList.add('show');
+				var self_1 = self;
+
+				
+				if(self.temp2){
+					self_1.createText()
+					setTimeout(function(){
+						self_1.nextSlider();
+					}, self.temp2_time + (self.arr_text.length*500))
+				}
 			}
 		}
+
+
 		this.banner.classList.add('show');
+	}
+
+	this.createText = function(){
+		var index = 0;
+
+		var arr_elem = this.elem_banner.red_line_bottom;
+		// arr_elem[index].classList.add('show');
+		this.elem_banner.line_bottom.classList.remove('hide')
+		var arr = [];
+
+		for(var i = 0; i < this.arr_text.length; i++){
+			var elem = createElem('div', 'feature hide', arr_elem[index])
+			elem.style.transitionDelay = (0.5*i) + 's' ;
+			elem.innerHTML = this.arr_text[i];
+			arr.push(elem)
+			
+		}
+		var self = this;
+
+		(function(arr){
+			setTimeout(function(){
+				self.remClass(arr)
+			},800)
+		})(arr);
+
+	}
+	this.remClass = function(arr){
+		for(var i = 0; i < arr.length; i++){
+			arr[i].classList.remove('hide')
+		}
 	}
 
 	this.clearText = function(){
@@ -589,10 +716,7 @@ function briefBanner(params){
 			arr_elem[index_itm].classList.add('show');
 		} else {
 			if(this.full_screen){
-				this.banner.classList.remove('show')
-				this.timeoutSwitch = setTimeout(function(){
-					self.switchData();
-				}, 2000);
+				this.nextSlider()
 			}
 		}
 
@@ -600,6 +724,14 @@ function briefBanner(params){
 			var next_index = (index+1)
 			this.timeout_text = setTimeout(self.animationText.bind(self, next_index),2000);	
 		}
+	}
+
+	this.nextSlider = function(){
+		var self = this;
+		this.banner.classList.remove('show')
+		this.timeoutSwitch = setTimeout(function(){
+			self.switchData();
+		}, 2000);
 	}
 
 	function createElem(tag, class_name, par){
