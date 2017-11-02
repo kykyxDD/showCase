@@ -82,69 +82,73 @@
 	}
 	.banner.temp2 .view .blue_line {
 
-    left: 30px;
-    padding: 20px 0;
-}
-.banner.temp2 .view .blue_line .text_now {
-    font-size: 30px;
-    line-height: 30px;
-}
-.banner.temp2 .view .blue_line .cont_blue_line > div {
-    padding: 0 15px;
-}
-.banner.temp2 .view .blue_line .text_price {
-    line-height: 70px;
-    font-size: 70px;
-}
-.banner.temp2 .view .blue_line .was {
-    font-size: 18px;
-    line-height: 18px;
-}
-.banner .view .blue_line .quote {
-    display: none;
-    opacity: 0;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 16px;
-    line-height: 18px;
-    max-width: 215px;
-}
+		left: 30px;
+		padding: 15px 0 20px;
+	}
+	.banner.temp2 .view .blue_line .text_now {
+		font-size: 30px;
+		line-height: 30px;
+		margin-bottom: 0px;
+	}
+	.banner.temp2 .view .blue_line .cont_blue_line > div {
+		padding: 0 15px;
+	}
+	.banner.temp2 .view .blue_line .text_price {
+		line-height: 70px;
+		font-size: 70px;
+		margin-bottom: 0;
+	}
+	.banner.temp2 .view .blue_line .was {
+		font-size: 18px;
+		line-height: 18px;
+	}
+	.banner .view .blue_line .quote {
+		display: none;
+		opacity: 0;
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 18px;
+		max-width: 215px;
+	}
 
-.banner .view .line_bottom .feature {
-    font-size: 14px;
-    padding: 5px 0;
-    line-height: 16px;
-}
-.banner.temp2 .view .line_bottom .text_0 {
-    font-size: 16px;
-    line-height: 16px;
-    top: -25px;
-}
+	.banner .view .line_bottom .feature {
+		font-size: 14px;
+		padding: 5px 0;
+		line-height: 16px;
+	}
+	.banner.temp2 .view .line_bottom .text_0 {
+		font-size: 16px;
+		line-height: 16px;
+		top: -25px;
+	}
 }
 @media screen and (max-width: 600px), screen and (max-height: 400px) {
 	.banner.temp2 .view .line_top .text_top {
-		text-indent: 20px;
+		text-indent: 15px;
 		font-size: 20px;
 		line-height: 20px;
 	}
 	.banner.temp2 .view .desc {
 		font-size: 30px;
 		line-height: 30px;
-		left: 20px;
+		left: 15px;
 	}
 	.banner .view .desc .model {
 		bottom: -25px;
 		font-size: 15px;
 		line-height: 15px;
 	}
+	.banner.temp2 .view .line_bottom {
+		padding: 5px 10px;
+		bottom: 10px;
+	}
 	.banner.temp2.show .view .line_bottom {
 		right: 10px;
-		padding: 5px 10px;
-		bottom: 15px;
 	}
 	.banner .view .line_bottom .feature {
-		font-size: 11px;
-		padding: 5px 0;
+		font-size: 10px;
+		padding: 3px 0;
 		line-height: 12px;
 	}
 
@@ -157,33 +161,49 @@
 		top: -20px;
 	}
 	.banner.temp2 .view .blue_line {
-		left: 20px;
+		left: 15px;
 		padding: 10px 0;
 	}
 	.banner.temp2 .view .blue_line .cont_blue_line > div {
-		padding: 0 10px;
+		padding: 0 7px;
+		margin-bottom: 0px;
 	}
 	.banner.temp2 .view .blue_line .text_now {
 		font-size: 20px;
 		line-height: 20px;
 	}
 	.banner.temp2 .view .blue_line .text_price {
-		line-height: 50px;
-		font-size: 50px;
+		line-height: 40px;
+		font-size: 43px;
+		
+	}
+	.banner.temp2 .view .blue_line .text_now,
+	.banner.temp2 .view .blue_line .text_price {
+		text-shadow: 2px 2px 1px rgba(62,68,86,0.5);
 	}
 	.banner.temp2 .view .blue_line .was {
-		font-size: 14px;
-		line-height: 14px;
+		font-size: 10px;
+		line-height: 10px;
+		
+	}
+	.banner.temp2 .view .blue_line .was,
+	.banner.temp2.show .view .blue_line .was{
+		margin: 5px auto;
 	}
 	.banner .view .blue_line .quote {
 		display: none;
 		opacity: 0;
 		color: #fff;
 		text-transform: uppercase;
-		font-size: 12px;
-		line-height: 12px;
-		max-width: 160px;
+		font-size: 10px;
+		line-height: 10px;
+		max-width: 150px;
+		margin-top: 5px;
 	}
+	.banner.temp2.no_wasprice .view .blue_line .text_price {
+		margin: 0px auto 10px;
+	}
+
 }
 @media screen and (min-height: 1000px)  {
 

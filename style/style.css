@@ -154,9 +154,8 @@ body:fullscreen {
 	height: 100%;
 	background: #fff;
 	font-family: 'HelveticaNeueLTPro', Helvetica, Arial, sans-serif;
-
 	overflow: hidden;
-	transition: background 0.3s;
+	transition: background 0.2s;
 }
 .banner .view .cont_view {
 	position: relative;
@@ -175,10 +174,9 @@ body:fullscreen {
 	left: 0;
 	right: 0;
 	background: url(../image/cont_bg.png) repeat-x;
-
 	background-size: cover; 
 	opacity: 0;
-	transition: opacity 3s ease 0s;
+	transition: opacity 0.5s ease 0.5s;
 
 }
 
@@ -489,15 +487,20 @@ body:fullscreen {
 
 	margin-left: -50px;
 	opacity: 0;
+	transition: all 0.5s ease 0s;
+	-webkit-transition:all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	-o-transition:all 0.5s ease 0s;
+}
+.banner.show:not(.no_wasprice) .view .blue_line .was {
+	margin-left: 0px;
+	opacity: 1;
 	transition: all 0.5s ease 1s;
 	-webkit-transition:all 0.5s ease 1s;
 	-moz-transition: all 0.5s ease 1s;
 	-ms-transition: all 0.5s ease 1s;
 	-o-transition:all 0.5s ease 1s;
-}
-.banner.show .view .blue_line .was {
-	margin-left: 0px;
-	opacity: 1;
 }
 .banner .view .blue_line .was > div,
 .banner .view .blue_line .was .itm_waspice{
@@ -810,11 +813,11 @@ body:fullscreen {
 	display: block;
 	opacity: 0;
 	/*margin-left: 50px;*/
-	transition: all 0.5s ease 2s;
-	-webkit-transition: all 0.5s ease 2s;
-	-moz-transition: all 0.5s ease 2s;
-	-ms-transition: all 0.5s ease 2s;
-	-o-transition: all 0.5s ease 2s;
+	transition: transform 0.5s ease 2s, opacity 0.5s ease 2s;
+	-webkit-transition: transform 0.5s ease 2s, opacity 0.5s ease 2s;
+	-moz-transition: transform 0.5s ease 2s, opacity 0.5s ease 2s;
+	-ms-transition: transform 0.5s ease 2s, opacity 0.5s ease 2s;
+	-o-transition: transform 0.5s ease 2s, opacity 0.5s ease 2s;
 
 	-webkit-transform:   translateX(100px);
 	-moz-transform:  translateX(100px);

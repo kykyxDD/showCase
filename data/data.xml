@@ -1,393 +1,483 @@
-<Xml><Result>SUCCESS</Result><Data>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Electrical</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>1</Position>
-    <Barcode>5060174294563</Barcode>
-    <Brand>LG</Brand>
-    <BrandGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=LG.png</BrandGraphicFileName>
-    <ClassCode>201102</ClassCode>
-    <ClassId>4</ClassId>
-    <ClassName>Brown Goods</ClassName>
-    <Code>20042</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=20042.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Smart 4K Ultra HD 43" LED TV</Description>
-    <Dimensions>(H) 63.3cm (W) 97.6cm (D) 20.7cm</Dimensions>
-    <DisplayCode>20042</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>43" (109.2cm visible screen size) Ultra High Definition Integrated Digital LED TV</Feature1>
-    <Feature2>Includes both Freesat HD Freeview HD tuners (receives free digital satellite broadcastings)</Feature2>
-    <Feature3>Access 4k content on Netflix &amp; Amazon Prime</Feature3>
-    <Feature4>HDR displays brighter colours and greater contrast</Feature4>
-    <ItemId>170</ItemId>
-    <ItemDetailId>271</ItemDetailId>
-    <ItemPriceId>3074</ItemPriceId>
-    <MiscText1>FV,FS,HDMI</MiscText1>
-    <MiscText2>4.8</MiscText2>
-    <MiscText3>100</MiscText3>
-    <MiscText5>85</MiscText5>
-    <MiscText6>8.6</MiscText6>
-    <MiscText7>http://www.reevoo.com/p/panasonic-tx-l32v10#reviews</MiscText7>
-    <Model>43UH620V</Model>
-    <Retail>599.9900</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>BRAND NEW</Strapline1>
-    <NativeCode>201102</NativeCode>
-	<WasPrice1>549.8800</WasPrice1>
-	<WasPrice2>599.7700</WasPrice2>
-	<WasPrice3>849.6600</WasPrice3>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Electrical</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>2</Position>
-    <Barcode>4905524603484</Barcode>
-    <Brand>Sony</Brand>
-    <BrandGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=sony.png</BrandGraphicFileName>
-    <ClassCode>201102</ClassCode>
-    <ClassId>4</ClassId>
-    <ClassName>Brown Goods</ClassName>
-    <Code>20107</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=20107.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Bravia 40" Smart LED TV</Description>
-    <Dimensions>(H) 58.9cm (W) 92.4cm (D) 21.2cm</Dimensions>
-    <DisplayCode>20107</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>40" LED backlit screen with X-Reality PRO technology</Feature1>
-    <Feature2>Digital tuner giving access to Freeview HD channels and other digital content</Feature2>
-    <Feature3>Built-in WiFi to connect to the internet</Feature3>
-    <Feature4>Two HDMI connections and two USB 2.0 ports</Feature4>
-    <ItemId>171</ItemId>
-    <ItemDetailId>263</ItemDetailId>
-    <ItemPriceId>3075</ItemPriceId>
-    <MiscText1>FV,1080,HDMI</MiscText1>
-    <MiscText2>4.5</MiscText2>
-    <MiscText3>93</MiscText3>
-    <MiscText5>559</MiscText5>
-    <MiscText6>8.7</MiscText6>
-    <MiscText7>http://www.reevoo.com/p/sony-kdl-32s5500#reviews</MiscText7>
-    <Model>KDL40WD653BU</Model>
-    <Retail>579.9900</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>GREAT VALUE</Strapline1>
-    <NativeCode>201102</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>3</Position>
-    <Brand>Fossil</Brand>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99001</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99001.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Grant Automatic Silver Skeleton Dial Men's Watch</Description>
-    <DisplayCode>99001</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>Stainless steel case with a navy blue leather strap</Feature1>
-    <Feature2>Fixed stainless steel bezel</Feature2>
-    <Feature3>Silver skeleton dial with luminous blue hands and Roman numeral hour markers</Feature3>
-    <Feature4>Minute markers around the outer rim</Feature4>
-    <ItemId>100015</ItemId>
-    <ItemDetailId>264</ItemDetailId>
-    <ItemPriceId>3076</ItemPriceId>
-    <Model>ME3111</Model>
-    <Retail>299.9900</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>JUST LAUNCHED</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>4</Position>
-    <Brand>TAG HEUER</Brand>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99002</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99002.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Formula 1 Grande Date Men's Watch</Description>
-    <DisplayCode>99002</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>Black PVD stainless steel case with a black rubber strap</Feature1>
-    <Feature2>Unidirectional titanium-carbide coated bezel</Feature2>
-    <Feature3>Black with circular guilloche patterning dial with luminous hands and index hour markers</Feature3>
-    <ItemId>100016</ItemId>
-    <ItemDetailId>265</ItemDetailId>
-    <ItemPriceId>3077</ItemPriceId>
-    <Model>FT6026</Model>
-    <Retail>1299.9900</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>Latest Model</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>5</Position>
-    <Brand>Dior</Brand>
-    <BrandGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=Dior.png</BrandGraphicFileName>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99003</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99003.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Dior J'Adore EDP</Description>
-    <DisplayCode>99003</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>The incarnation of absolute femininity in an opulent fruity-floral bouquet</Feature1>
-    <Feature2>J'adore takes flight with a fresh accord of bergamot</Feature2>
-    <Feature3>Opens into a vibrant armful of roses with a delicate jasmine drydown</Feature3>
-    <Feature4>The sensual, curvaceous lines of its amphora bottle make this a legendary perfume</Feature4>
-    <ItemId>100017</ItemId>
-    <ItemDetailId>266</ItemDetailId>
-    <ItemPriceId>3078</ItemPriceId>
-    <Model>1005008</Model>
-    <Retail>79.5000</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <StraplineCode>XFORY</StraplineCode>
-    <Strapline1>JUST FOR HER</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>6</Position>
-    <Brand>Gucci</Brand>
-    <BrandGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=gucci.png</BrandGraphicFileName>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99004</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99004.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Gucci Rush EDT</Description>
-    <DisplayCode>99004</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>This fragrance is euphoric and intoxicating</Feature1>
-    <Feature2>Gucci Rush is a fantasy to be reached through an intoxicating, addictive combination of florals and spices</Feature2>
-    <Feature3> A sensual burst unlike any other</Feature3>
-    <ItemId>100018</ItemId>
-    <ItemDetailId>267</ItemDetailId>
-    <ItemPriceId>3079</ItemPriceId>
-    <Model>336545</Model>
-    <Retail>90.0000</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>BRAND NEW</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>7</Position>
-    <Brand>TW Steel</Brand>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99010</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99010.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>Canteen Black Dial Automatic Men's Watch</Description>
-    <DisplayCode>99010</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>Stainless steel case with a dark brown leather strap</Feature1>
-    <Feature2>Fixed bezel</Feature2>
-    <Feature3>Date display at the 3 o'clock position</Feature3>
-    <ItemId>100019</ItemId>
-    <ItemDetailId>268</ItemDetailId>
-    <ItemPriceId>3080</ItemPriceId>
-    <Model>CS35</Model>
-    <Retail>635.0000</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>SHIP EXCLUSIVE</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>8</Position>
-    <Brand>Miss Dior</Brand>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99016</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99016.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>DIOR - 'Miss Dior' eau de parfum</Description>
-    <DisplayCode>99016</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>The new Miss Dior Eau de Parfum reveals the femininity of a sensual floral</Feature1>
-    <Feature2>Its heart is a floral declaration that combines the beauty of Grasse rose with the boldness of Damascus rose</Feature2>
-    <Feature3>A Miss Dior that will leave you lovestruck</Feature3>
-    <ItemId>100020</ItemId>
-    <ItemDetailId>269</ItemDetailId>
-    <ItemPriceId>3081</ItemPriceId>
-    <Model>13048</Model>
-    <Retail>93.6000</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <Strapline1>SHIP FAVOURITE</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-  <Record>
-    <DeviceReference>PI1</DeviceReference>
-    <DeviceTypeTheme>Normal</DeviceTypeTheme>
-    <InStock>true</InStock>
-    <Position>9</Position>
-    <Brand>Pandora</Brand>
-    <BrandGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=Pandora.png</BrandGraphicFileName>
-    <ClassCode>201</ClassCode>
-    <ClassId>2</ClassId>
-    <ClassName>Electrical</ClassName>
-    <Code>99017</Code>
-    <CodeGraphicFileName>https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99017.png</CodeGraphicFileName>
-    <CountryCode>GBR</CountryCode>
-    <CultureCode>en-GB</CultureCode>
-    <CurrencySymbol>£</CurrencySymbol>
-    <CurrencySymbolMinor>p</CurrencySymbolMinor>
-    <CurrencyType>GBP</CurrencyType>
-    <DefaultCurrency>GBP</DefaultCurrency>
-    <Description>14ct Gold Bangle</Description>
-    <DisplayCode>99017</DisplayCode>
-    <EndDate>9999-12-31T00:00:00+00:00</EndDate>
-    <Feature1>This plain gold tone ladies bangle from PANDORA comes as a new addition to the Essence collection</Feature1>
-    <Feature2>14ct Gold</Feature2>
-    <Feature3>PANDORA ESSENCE</Feature3>
-    <ItemId>100021</ItemId>
-    <ItemDetailId>270</ItemDetailId>
-    <ItemPriceId>3082</ItemPriceId>
-    <Model>P1289</Model>
-    <Retail>700.0000</Retail>
-    <StartDate>2017-10-18T00:00:00+01:00</StartDate>
-    <StoreBanding>Standard</StoreBanding>
-    <StoreCode>900</StoreCode>
-    <StoreGroupCode>CHAIN</StoreGroupCode>
-    <StoreGroupName>Chain Stores</StoreGroupName>
-    <StoreId>12</StoreId>
-    <StoreName>The Technology Store</StoreName>
-    <StorePriceGroupCode>CORE</StorePriceGroupCode>
-    <StorePriceGroupName>Core Pricing</StorePriceGroupName>
-    <StraplineCode>XFORY</StraplineCode>
-    <Strapline1>JUST FOR HER</Strapline1>
-    <NativeCode>201</NativeCode>
-  </Record>
-</Data><Error/>
+<Xml>
+<Result>SUCCESS</Result>
+<Data>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Electrical</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>1</Position>
+<Barcode>5060174294563</Barcode>
+<Brand>LG</Brand>
+<BrandGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=LG.png
+</BrandGraphicFileName>
+<ClassCode>201102</ClassCode>
+<ClassId>4</ClassId>
+<ClassName>Brown Goods</ClassName>
+<Code>20042</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=20042.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Smart 4K Ultra HD 43" LED TV</Description>
+<Dimensions>(H) 63.3cm (W) 97.6cm (D) 20.7cm</Dimensions>
+<DisplayCode>20042</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+43" (109.2cm visible screen size) Ultra High Definition Integrated Digital LED TV
+</Feature1>
+<Feature2>
+Includes both Freesat HD Freeview HD tuners (receives free digital satellite broadcastings)
+</Feature2>
+<Feature3>Access 4k content on Netflix & Amazon Prime</Feature3>
+<Feature4>HDR displays brighter colours and greater contrast</Feature4>
+<ItemId>170</ItemId>
+<ItemDetailId>271</ItemDetailId>
+<ItemPriceId>3182</ItemPriceId>
+<MiscText1>FV,FS,HDMI</MiscText1>
+<MiscText2>4.8</MiscText2>
+<MiscText3>100</MiscText3>
+<MiscText5>85</MiscText5>
+<MiscText6>8.6</MiscText6>
+<MiscText7>
+http://www.reevoo.com/p/panasonic-tx-l32v10#reviews
+</MiscText7>
+<Model>43UH620V</Model>
+<Retail>449.9900</Retail>
+<Saving>150.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>BRAND NEW</Strapline1>
+<WasPrice1>509.9900</WasPrice1>
+<WasPrice2>599.9900</WasPrice2>
+<NativeCode>201102</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Electrical</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>2</Position>
+<Barcode>4905524603484</Barcode>
+<Brand>Sony</Brand>
+<BrandGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=sony.png
+</BrandGraphicFileName>
+<ClassCode>201102</ClassCode>
+<ClassId>4</ClassId>
+<ClassName>Brown Goods</ClassName>
+<Code>20107</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=20107.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Bravia 40" Smart LED TV</Description>
+<Dimensions>(H) 58.9cm (W) 92.4cm (D) 21.2cm</Dimensions>
+<DisplayCode>20107</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+40" LED backlit screen with X-Reality PRO technology
+</Feature1>
+<Feature2>
+Digital tuner giving access to Freeview HD channels and other digital content
+</Feature2>
+<Feature3>Built-in WiFi to connect to the internet</Feature3>
+<Feature4>Two HDMI connections and two USB 2.0 ports</Feature4>
+<ItemId>171</ItemId>
+<ItemDetailId>263</ItemDetailId>
+<ItemPriceId>3183</ItemPriceId>
+<MiscText1>FV,1080,HDMI</MiscText1>
+<MiscText2>4.5</MiscText2>
+<MiscText3>93</MiscText3>
+<MiscText5>559</MiscText5>
+<MiscText6>8.7</MiscText6>
+<MiscText7>http://www.reevoo.com/p/sony-kdl-32s5500#reviews</MiscText7>
+<Model>KDL40WD653BU</Model>
+<Retail>499.9900</Retail>
+<Saving>80.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>GREAT VALUE</Strapline1>
+<WasPrice1>529.9900</WasPrice1>
+<WasPrice2>579.9900</WasPrice2>
+<NativeCode>201102</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>3</Position>
+<Brand>Fossil</Brand>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99001</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99001.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Grant Automatic Silver Skeleton Dial Men's Watch</Description>
+<DisplayCode>99001</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+Stainless steel case with a navy blue leather strap
+</Feature1>
+<Feature2>Fixed stainless steel bezel</Feature2>
+<Feature3>
+Silver skeleton dial with luminous blue hands and Roman numeral hour markers
+</Feature3>
+<Feature4>Minute markers around the outer rim</Feature4>
+<ItemId>100015</ItemId>
+<ItemDetailId>264</ItemDetailId>
+<ItemPriceId>3184</ItemPriceId>
+<Model>ME3111</Model>
+<Retail>175.9900</Retail>
+<Saving>124.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>JUST LAUNCHED</Strapline1>
+<WasPrice1>199.9900</WasPrice1>
+<WasPrice2>279.9900</WasPrice2>
+<WasPrice3>299.9900</WasPrice3>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>4</Position>
+<Brand>TAG HEUER</Brand>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99002</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99002.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Formula 1 Grande Date Men's Watch</Description>
+<DisplayCode>99002</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+Black PVD stainless steel case with a black rubber strap
+</Feature1>
+<Feature2>Unidirectional titanium-carbide coated bezel</Feature2>
+<Feature3>
+Black with circular guilloche patterning dial with luminous hands and index hour markers
+</Feature3>
+<ItemId>100016</ItemId>
+<ItemDetailId>265</ItemDetailId>
+<ItemPriceId>3185</ItemPriceId>
+<Model>FT6026</Model>
+<Retail>999.9900</Retail>
+<Saving>300.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>Latest Model</Strapline1>
+<WasPrice1>1079.9900</WasPrice1>
+<WasPrice2>1149.9900</WasPrice2>
+<WasPrice3>1299.9900</WasPrice3>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>5</Position>
+<Brand>Dior</Brand>
+<BrandGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=Dior.png
+</BrandGraphicFileName>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99003</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99003.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Dior J'Adore EDP</Description>
+<DisplayCode>99003</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+The incarnation of absolute femininity in an opulent fruity-floral bouquet
+</Feature1>
+<Feature2>
+J'adore takes flight with a fresh accord of bergamot
+</Feature2>
+<Feature3>
+Opens into a vibrant armful of roses with a delicate jasmine drydown
+</Feature3>
+<Feature4>
+The sensual, curvaceous lines of its amphora bottle make this a legendary perfume
+</Feature4>
+<ItemId>100017</ItemId>
+<ItemDetailId>266</ItemDetailId>
+<ItemPriceId>3186</ItemPriceId>
+<Model>1005008</Model>
+<Retail>71.5000</Retail>
+<Saving>8.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<StraplineCode>XFORY</StraplineCode>
+<Strapline1>JUST FOR HER</Strapline1>
+<WasPrice1>74.0000</WasPrice1>
+<WasPrice2>79.5000</WasPrice2>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>6</Position>
+<Brand>Gucci</Brand>
+<BrandGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=gucci.png
+</BrandGraphicFileName>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99004</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99004.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Gucci Rush EDT</Description>
+<DisplayCode>99004</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>This fragrance is euphoric and intoxicating</Feature1>
+<Feature2>
+Gucci Rush is a fantasy to be reached through an intoxicating, addictive combination of florals and spices
+</Feature2>
+<Feature3>A sensual burst unlike any other</Feature3>
+<ItemId>100018</ItemId>
+<ItemDetailId>267</ItemDetailId>
+<ItemPriceId>3187</ItemPriceId>
+<Model>336545</Model>
+<Retail>80.0000</Retail>
+<Saving>10.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>BRAND NEW</Strapline1>
+<WasPrice1>90.0000</WasPrice1>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>7</Position>
+<Brand>TW Steel</Brand>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99010</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99010.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>Canteen Black Dial Automatic Men's Watch</Description>
+<DisplayCode>99010</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+Stainless steel case with a dark brown leather strap
+</Feature1>
+<Feature2>Fixed bezel</Feature2>
+<Feature3>Date display at the 3 o'clock position</Feature3>
+<ItemId>100019</ItemId>
+<ItemDetailId>268</ItemDetailId>
+<ItemPriceId>3188</ItemPriceId>
+<Model>CS35</Model>
+<Retail>550.0000</Retail>
+<Saving>85.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>SHIP EXCLUSIVE</Strapline1>
+<WasPrice1>599.0000</WasPrice1>
+<WasPrice2>635.0000</WasPrice2>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>8</Position>
+<Brand>Miss Dior</Brand>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99016</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99016.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>DIOR - 'Miss Dior' eau de parfum</Description>
+<DisplayCode>99016</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+The new Miss Dior Eau de Parfum reveals the femininity of a sensual floral
+</Feature1>
+<Feature2>
+Its heart is a floral declaration that combines the beauty of Grasse rose with the boldness of Damascus rose
+</Feature2>
+<Feature3>A Miss Dior that will leave you lovestruck</Feature3>
+<ItemId>100020</ItemId>
+<ItemDetailId>269</ItemDetailId>
+<ItemPriceId>3189</ItemPriceId>
+<Model>13048</Model>
+<Retail>79.5000</Retail>
+<Saving>14.1000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<Strapline1>SHIP FAVOURITE</Strapline1>
+<WasPrice1>93.6000</WasPrice1>
+<NativeCode>201</NativeCode>
+</Record>
+<Record>
+<DeviceReference>PI1</DeviceReference>
+<DeviceTypeTheme>Normal</DeviceTypeTheme>
+<InStock>true</InStock>
+<Position>9</Position>
+<Brand>Pandora</Brand>
+<BrandGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=Pandora.png
+</BrandGraphicFileName>
+<ClassCode>201</ClassCode>
+<ClassId>2</ClassId>
+<ClassName>Electrical</ClassName>
+<Code>99017</Code>
+<CodeGraphicFileName>
+https://newdemo.nettickit.com/publisher/graphicdownload.aspx?filename=99017.png
+</CodeGraphicFileName>
+<CountryCode>GBR</CountryCode>
+<CultureCode>en-GB</CultureCode>
+<CurrencySymbol>£</CurrencySymbol>
+<CurrencySymbolMinor>p</CurrencySymbolMinor>
+<CurrencyType>GBP</CurrencyType>
+<DefaultCurrency>GBP</DefaultCurrency>
+<Description>14ct Gold Bangle</Description>
+<DisplayCode>99017</DisplayCode>
+<EndDate>9999-12-31T00:00:00+00:00</EndDate>
+<Feature1>
+This plain gold tone ladies bangle from PANDORA comes as a new addition to the Essence collection
+</Feature1>
+<Feature2>14ct Gold</Feature2>
+<Feature3>PANDORA ESSENCE</Feature3>
+<ItemId>100021</ItemId>
+<ItemDetailId>270</ItemDetailId>
+<ItemPriceId>3190</ItemPriceId>
+<Model>P1289</Model>
+<Retail>550.0000</Retail>
+<Saving>150.0000</Saving>
+<StartDate>2017-10-18T00:00:00+01:00</StartDate>
+<StoreBanding>Standard</StoreBanding>
+<StoreCode>900</StoreCode>
+<StoreGroupCode>CHAIN</StoreGroupCode>
+<StoreGroupName>Chain Stores</StoreGroupName>
+<StoreId>12</StoreId>
+<StoreName>The Technology Store</StoreName>
+<StorePriceGroupCode>CORE</StorePriceGroupCode>
+<StorePriceGroupName>Core Pricing</StorePriceGroupName>
+<StraplineCode>XFORY</StraplineCode>
+<Strapline1>JUST FOR HER</Strapline1>
+<WasPrice1>700.0000</WasPrice1>
+<NativeCode>201</NativeCode>
+</Record>
+</Data>
+<Error/>
 </Xml>

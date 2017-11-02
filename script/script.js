@@ -105,7 +105,6 @@ function briefBanner(params){
 		var xml = elem.children[0];
 		var data = xml.getElementsByTagName('data')[0];
 		for(var i = 0; i < data.children.length; i++){
-			// console.log(data.children[i])
 			data.children[i] = this.checkChild(data.children[i]);
 		}
 		return elem.innerHTML
@@ -260,7 +259,6 @@ function briefBanner(params){
 
 		var m_0 = (965)*s_2;
 		var m_1 = (8000)*s_2 - m_0;
-		// console.log(m_0, m_1)
 
 		var anim = CSSAnimations.create('anim_bg', {
 			'0%': {
@@ -388,23 +386,23 @@ function briefBanner(params){
 				if(!itm.children.length) continue
 				for(var j = 0; j < itm.children.length; j++){
 					var key = itm.children[j].tagName.toLocaleLowerCase();
-					var child = itm.children[j]
+					var child = itm.children[j];
+					var text = unescape(child.innerHTML);
+					text = text.replace(/&amp;/g, '&');
+					text = text.replace(/&amp:/g, '&');
+
 					if(key.indexOf('feature')>=0){
 						key = 'feature';
 
-						// var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
-
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key].push(unescape(child.innerHTML))
+						parse_data[key].push(text)
 					} else if(key.indexOf('wasprice') >= 0){
 						key = 'wasprice';
 
-						// var index = +itm.children[j].tagName.toLocaleLowerCase().replace(key, '')
-
 						if(!parse_data[key]) parse_data[key] = [];
-						parse_data[key].push(unescape(child.innerHTML))
+						parse_data[key].push(text)
 					} else {
-						parse_data[key] = unescape(child.innerHTML)
+						parse_data[key] = text
 					}
 				}
 
@@ -441,7 +439,6 @@ function briefBanner(params){
 					itm.saving = num
 				}
 			}
-
 		}
 
 		return data
@@ -474,7 +471,6 @@ function briefBanner(params){
 		elems.center.classList.remove('hide');
 		elems.desc.classList.remove('hide');
 		elems.red_line_top.classList.remove('hide');
-		
 
 		//if(data.classid == 2 || data.brand.toLowerCase() == 'sony'){
 		if(this.chechTemp2(data)){
@@ -538,7 +534,7 @@ function briefBanner(params){
 		var len = 0
 
 		if(saving >= 0){
-			var text = ''+this.getPrice(saving);//Math.ceil(saving)
+			var text = ''+this.getPrice(saving);
 			len = text.indexOf('.') >= 0 ?  text.length-1 : text.length;
 			elems.center_price.innerHTML = data.currencysymbol + text
 			elems.center_price.classList.add('len_'+len)
@@ -572,19 +568,14 @@ function briefBanner(params){
 		}
 
 
-		
-		var diff = 1800;
 		this.arr_text = data['feature'];
 
 		if(!this.temp2){
-			var arr_elem = self.elem_banner.red_line_bottom;
-			arr_elem[0].classList.remove('show');
 			this.timeoutClearText = setTimeout(function(){
 				self.animationText(0)
-			}, diff);
-			console.log('diff',diff)
+			}, 1800);
 		} else {
-			this.elem_banner.line_bottom.classList.add('hide')			
+			this.elem_banner.line_bottom.classList.add('hide')
 		}
 
 
@@ -601,15 +592,13 @@ function briefBanner(params){
 				}, this.temp2_time)
 			}
 		} else {
-			var arr_elem = self.elem_banner.red_line_bottom;
-			arr_elem[0].classList.add('show');
+
 			img.src = data.codegraphicfilename ? data.codegraphicfilename :  data.productimageurl;
 			img.onload = function(){
-				self.elem_banner.img.src = this.src; //.style.backgroundImage = 'url('+this.src+')';
+				self.elem_banner.img.src = this.src; 
 				self.elem_banner.cont_img.classList.add('show');
 				var self_1 = self;
 
-				
 				if(self.temp2){
 					self_1.createText()
 					setTimeout(function(){
@@ -627,7 +616,7 @@ function briefBanner(params){
 		var index = 0;
 
 		var arr_elem = this.elem_banner.red_line_bottom;
-		// arr_elem[index].classList.add('show');
+		arr_elem[index].classList.add('show');
 		this.elem_banner.line_bottom.classList.remove('hide')
 		var arr = [];
 
@@ -682,7 +671,6 @@ function briefBanner(params){
 			}
 			var angle = -size.h/size.w;
 			var deg = (Math.sin(angle)/Math.PI)*180;
-			// console.log()
 			var line = createElem('div', 'line', elem)
 			line.style.transform = 'rotate('+Math.floor(deg)+'deg)';
 
@@ -697,7 +685,6 @@ function briefBanner(params){
 	}
 
 	this.animationText = function(index){
-		// console.log('animationText',index)
 		var arr_elem = this.elem_banner.red_line_bottom;
 		var arr_text = this.arr_text
 		var prev_itm = Math.abs((index-1)%2);
